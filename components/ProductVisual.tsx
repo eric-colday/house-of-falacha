@@ -1,7 +1,6 @@
 import { Lotus } from "./Logo";
 
-// Visuel de produit en attendant les vraies photos.
-// Pour une photo : ajoute "image": "/produits/mon-produit.jpg" dans data/catalog.json et affiche-la ici.
+// Visuel produit : photo si fournie dans data/catalog.json (« photo »), sinon une silhouette dessinée.
 const shapes: Record<string, string> = {
   tshirt: "M30 18 L42 12 Q50 20 58 12 L70 18 L82 32 L72 40 L68 34 L68 88 L32 88 L32 34 L28 40 L18 32 Z",
   cap: "M18 64 Q20 34 50 32 Q80 34 82 64 Z M14 64 L92 64 Q92 72 82 72 L14 72 Z",
@@ -9,7 +8,13 @@ const shapes: Record<string, string> = {
   bracelet: "M50 26 A26 26 0 1 1 49.9 26 Z M50 36 A16 16 0 1 0 50.1 36 Z",
 };
 
-export function ProductVisual({ visual, color }: { visual: string; color: string }) {
+export function ProductVisual({ visual, color, photo }: { visual: string; color: string; photo?: string }) {
+  if (photo) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={photo} alt="" loading="lazy" className="aspect-square w-full max-w-full object-cover" />
+    );
+  }
   const light = ["#ffffff", "#efe6d2"].includes(color.toLowerCase());
   return (
     <div className="relative flex aspect-square max-w-full items-center justify-center overflow-hidden bg-[#1c2240]">

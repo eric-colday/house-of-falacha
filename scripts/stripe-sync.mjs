@@ -14,18 +14,22 @@ const reset = process.argv.includes("--reset");
 const catalog = JSON.parse(readFileSync(new URL("../data/catalog.json", import.meta.url), "utf8"));
 
 const skus = [];
-for (const p of catalog.products) {
-  for (const [variant, qty] of Object.entries(p.stock)) {
-    skus.push({
-      id: variant === "unique" ? p.id : `${p.id}--${variant}`,
-      name: variant === "unique" ? p.name : `${p.name} (${variant})`,
-      stock: qty,
-    });
+if (catalog.boutiqueOuverte) {
+  for (const p of catalog.products) {
+    for (const [variant, qty] of Object.entries(p.stock)) {
+      skus.push({
+        id: variant === "unique" ? p.id : `${p.id}--${variant}`,
+        name: variant === "unique" ? p.name.fr : `${p.name.fr} (${variant})`,
+        stock: qty,
+      });
+    }
   }
 }
 for (const w of catalog.workshops) {
-  skus.push({ id: `ws-${w.id}`, name: `Place — ${w.title} (${w.date})`, stock: w.capacity });
+  if (!w.reservationsOuvertes || w.price == null || w.capacity == null) continue;
+  skus.push({ id: `ws-${w.id}`, name: `Place — ${w.title.fr} (${w.date})`, stock: w.capacity });
 }
+if (skus.length === 0) console.log("Rien à synchroniser : boutique fermée et aucun événement ouvert à la réservation.");
 
 for (const s of skus) {
   try {

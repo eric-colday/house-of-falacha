@@ -1,12 +1,13 @@
 import "server-only";
 import galerie from "@/data/galerie.json";
 import { site } from "./content";
+import type { Localized } from "./i18n";
 
-export type Photo = { src: string; alt: string; theme: string };
+export type Photo = { src: string; alt: Localized; theme: string };
 export type TikTokPost = {
   id: string;
   type: "video" | "photo";
-  title: string;
+  title: Localized;
   theme: string;
   date: string;
   url: string;

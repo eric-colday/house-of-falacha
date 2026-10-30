@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getDict, isLang } from "@/lib/i18n";
 
 /**
  * Envoie la demande de cours personnalisé dans HubSpot (API Forms v3, sans clé privée).
@@ -7,14 +8,16 @@ import { NextResponse } from "next/server";
  */
 export async function POST(request: Request) {
   const data = (await request.json().catch(() => null)) as Record<string, string> | null;
-  if (!data) return NextResponse.json({ error: "Formulaire invalide." }, { status: 400 });
+  const t = getDict(data?.lang && isLang(data.lang) ? data.lang : "fr");
+  if (!data) return NextResponse.json({ error: t.errors.required }, { status: 400 });
 
   const required = ["firstname", "email", "phone", "city", "type"];
   const missing = required.filter((k) => !data[k]?.trim());
-  if (missing.length) return NextResponse.json({ error: "Merci de remplir les champs obligatoires." }, { status: 400 });
-  if (!/^\S+@\S+\.\S+$/.test(data.email)) return NextResponse.json({ error: "Adresse e-mail invalide." }, { status: 400 });
+  if (missing.length) return NextResponse.json({ error: t.errors.required }, { status: 400 });
+  if (!/^\S+@\S+\.\S+$/.test(data.email)) return NextResponse.json({ error: t.errors.email }, { status: 400 });
 
   const message = [
+    `Langue du site : ${data.lang ?? "fr"}`,
     `Type de cours : ${data.type}`,
     `Occasion : ${data.occasion || "—"}`,
     `Date souhaitée : ${data.date || "à définir"}`,
@@ -48,7 +51,7 @@ export async function POST(request: Request) {
 
   if (!res.ok) {
     console.error("[cours-perso] HubSpot a refusé la demande", res.status, await res.text());
-    return NextResponse.json({ error: "L'envoi a échoué. Réessaie ou écris-nous sur WhatsApp." }, { status: 502 });
+    return NextResponse.json({ error: t.errors.send }, { status: 502 });
   }
   return NextResponse.json({ ok: true });
 }

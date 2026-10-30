@@ -32,8 +32,12 @@ Pour réapprovisionner : modifier la métadonnée dans le tableau de bord Stripe
 Créer un formulaire HubSpot avec les champs `firstname`, `lastname`, `email`, `phone`, `city`, `message`,
 puis renseigner `HUBSPOT_PORTAL_ID` et `HUBSPOT_FORM_ID`. Le type de cours, l'occasion, la date et le nombre de personnes arrivent dans `message`.
 
+## Langues
+Le site est bilingue : français sur `/fr` (par défaut, `/` y redirige) et italien sur `/it`, avec un sélecteur FR / IT dans l'en-tête.
+Tous les textes sont dans `lib/i18n.ts` ; les noms de produits, événements et légendes ont leurs versions `fr` / `it` dans `data/`.
+
 ## Pages
-Accueil, Workshops, Boutique, Cours perso, Galerie (`/galerie`), À propos (`/a-propos`), Panier, Merci.
+Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci — chacune sous `/fr/…` et `/it/…`.
 
 ## Galerie
 - Vidéos TikTok : `data/galerie.json` → `tiktok`. Pour en ajouter une, copie l'identifiant à la fin de l'adresse (`…/video/7700908810659056929`), un titre, un thème et la date. Elles se lisent directement sur le site avec le lecteur officiel TikTok.
@@ -41,11 +45,19 @@ Accueil, Workshops, Boutique, Cours perso, Galerie (`/galerie`), À propos (`/a-
 
 ## Modifier le contenu
 - Produits, prix (en centimes), stock de départ, dates de workshops : `data/catalog.json`.
-- Textes de l'accueil et de la page À propos : `lib/content.ts`.
+- Coordonnées, équipe, sponsors, photos clés : `lib/content.ts`.
+- Ouvrir la boutique : `"boutiqueOuverte": true` dans `data/catalog.json` (avec les vrais prix et stocks).
+- Ouvrir les réservations d'un événement : `"reservationsOuvertes": true`, `price` (centimes) et `capacity`.
+
+## Reçu de David (30 oct. 2026, WhatsApp)
+- Logo officiel (`public/logo-house-of-falacha.png`, lotus seul : `public/lotus.png`) et 11 photos (`public/galerie/`, crédits Randy_237 photography et Visora).
+- Prochain grand événement : Afro Urban Dance Workshop, 7 mars 2027, SD Factory Studio, Reggio Emilia.
+- Coachs : The Ryan, Lady Brown, Caporal237. Visora = studio photo/vidéo partenaire.
+- Sponsors : La_ProceduR, Visora, Destroy Party, TheOldDreams, Bahamshez.
+- Contact : sibafeuedavid@gmail.com, Instagram house_of_falacha. Site en français et italien.
 
 ## À compléter avec David
-- Page À propos : l'histoire de la maison (rédigée à partir de ses publications TikTok) et la liste des coachs (noms repris de ses remerciements TikTok), à valider. Ajouter leurs photos.
-- Photos pour la galerie.
-- Prix réels, tailles et quantités du merch ; dates, horaires et tarif des workshops (valeurs actuelles = exemples).
-- Logo officiel (`public/logo.png`, à brancher dans `components/Logo.tsx`) et photos des produits.
-- Adresse exacte des workshops.
+- Prix, tailles et stocks du merch (boutique affichée « bientôt disponible » en attendant).
+- Horaire et prix du workshop du 7 mars, nombre de places.
+- Compte de paiement (Stripe ou autre) — il utilise aujourd'hui des plateformes qui facturent la TVA.
+- Logo en plus haute définition (SVG idéalement) ; photos des coachs ; validation du texte À propos.

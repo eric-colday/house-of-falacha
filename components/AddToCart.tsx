@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import { useCart } from "./Cart";
+import { useLang } from "./Lang";
 
 type Variant = { variant: string; sku: string; stock: number };
 
 export function AddToCart({ name, price, variants }: { name: string; price: number; variants: Variant[] }) {
+  const { t } = useLang();
+  const s = t.shop;
   const { add, items } = useCart();
   const firstAvailable = variants.find((v) => v.stock > 0);
   const [selected, setSelected] = useState(firstAvailable?.sku ?? "");
@@ -17,13 +20,13 @@ export function AddToCart({ name, price, variants }: { name: string; price: numb
   const hasSizes = !(variants.length === 1 && variants[0].variant === "unique");
 
   if (!firstAvailable) {
-    return <p className="btn btn-contour w-full opacity-50">Épuisé</p>;
+    return <p className="btn btn-contour w-full opacity-50">{s.soldOut}</p>;
   }
 
   return (
     <div className="space-y-3">
       {hasSizes && (
-        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Taille">
+        <div className="flex flex-wrap gap-2" role="radiogroup" aria-label={s.size}>
           {variants.map((v) => (
             <button
               key={v.sku}
@@ -42,20 +45,20 @@ export function AddToCart({ name, price, variants }: { name: string; price: numb
         </div>
       )}
       <p className={`text-sm ${current && current.stock <= 5 ? "font-medium text-or-fonce" : "text-ardoise"}`}>
-        {current && current.stock <= 5 ? `Plus que ${current.stock} en stock` : `${current?.stock} en stock`}
+        {current && current.stock <= 5 ? s.lowStock(current.stock) : s.inStock(current?.stock ?? 0)}
       </p>
       <button
         type="button"
         disabled={!canAdd}
         onClick={() => {
           if (!current) return;
-          add({ sku: current.sku, name, price, detail: hasSizes ? `Taille ${current.variant}` : "Taille unique" });
+          add({ sku: current.sku, name, price, detail: hasSizes ? s.sizeLabel(current.variant) : s.oneSize });
           setAdded(true);
           setTimeout(() => setAdded(false), 1800);
         }}
         className={`btn w-full ${added ? "btn-or" : "btn-marine"}`}
       >
-        {added ? "Ajouté au panier" : canAdd ? "Ajouter au panier" : "Tout le stock est dans ton panier"}
+        {added ? s.added : canAdd ? s.add : s.maxed}
       </button>
     </div>
   );

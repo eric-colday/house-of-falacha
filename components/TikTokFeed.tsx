@@ -2,12 +2,14 @@
 
 import { useEffect } from "react";
 import { site } from "@/lib/content";
+import { useLang } from "./Lang";
 
 /**
  * Intégration officielle « profil créateur » de TikTok : affiche automatiquement
  * les dernières vidéos publiées sur @house.of.falacha, sans rien mettre à jour à la main.
  */
 export function TikTokFeed() {
+  const { lang } = useLang();
   useEffect(() => {
     const id = "tiktok-embed-script";
     document.getElementById(id)?.remove();
@@ -32,7 +34,7 @@ export function TikTokFeed() {
           <a target="_blank" rel="noreferrer" href={site.tiktok} className="font-bold underline">
             {site.tiktokHandle}
           </a>
-          <p className="mt-2 text-sm text-ardoise">Chargement des dernières vidéos…</p>
+          <p className="mt-2 text-sm text-ardoise">{lang === "it" ? "Caricamento degli ultimi video…" : "Chargement des dernières vidéos…"}</p>
         </section>
       </blockquote>
     </div>

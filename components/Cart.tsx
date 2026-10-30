@@ -1,6 +1,8 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import type { Lang } from "@/lib/i18n";
+import { useLang } from "./Lang";
 
 export type CartItem = { sku: string; name: string; detail: string; price: number; qty: number };
 
@@ -60,22 +62,23 @@ export function useCart() {
 
 export function CartLink() {
   const { count } = useCart();
+  const { t, href } = useLang();
   return (
-    <a href="/panier" className="btn btn-marine px-4 py-2">
-      Panier
-      <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-or px-1.5 text-xs text-nuit tabular-nums">{count}</span>
+    <a href={href("/panier")} className="btn btn-marine px-4 py-2">
+      {t.common.cart}
+      <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-nuit px-1.5 text-xs text-or-clair tabular-nums">{count}</span>
     </a>
   );
 }
 
 /** Envoie des articles à Stripe Checkout et redirige vers la page de paiement. */
-export async function startCheckout(items: { sku: string; qty: number }[]) {
+export async function startCheckout(items: { sku: string; qty: number }[], lang: Lang, fallbackError: string) {
   const res = await fetch("/api/checkout", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ items }),
+    body: JSON.stringify({ items, lang }),
   });
   const data = await res.json().catch(() => ({}));
-  if (!res.ok || !data.url) throw new Error(data.error ?? "Le paiement n'a pas pu démarrer. Réessaie.");
+  if (!res.ok || !data.url) throw new Error(data.error ?? fallbackError);
   window.location.href = data.url;
 }
