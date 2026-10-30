@@ -1,5 +1,5 @@
 {
-  "_aide": "Photos : dépose les fichiers dans public/galerie/ puis ajoute-les dans « photos » (src, alt en fr/it, theme). Vidéos TikTok : identifiant à la fin de l'adresse (…/video/IDENTIFIANT), titre fr/it, thème et date. type « photo » = carrousel TikTok, ouvert sur TikTok.",
+  "_aide": "Photos : dépose les fichiers dans public/galerie/ puis ajoute-les dans « photos » (src, alt en fr/it/en, theme). Vidéos TikTok : identifiant à la fin de l'adresse (…/video/IDENTIFIANT), titre fr/it/en, thème et date. type « photo » = carrousel TikTok, ouvert sur TikTok.",
   "themes": [
     "Workshops",
     "Événements",
@@ -12,7 +12,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "Photo de groupe du workshop, devant le drapeau du Cameroun",
-        "it": "Foto di gruppo del workshop, davanti alla bandiera del Camerun"
+        "it": "Foto di gruppo del workshop, davanti alla bandiera del Camerun",
+        "en": "Workshop group photo in front of the Cameroon flag"
       }
     },
     {
@@ -20,7 +21,8 @@
       "theme": "Événements",
       "alt": {
         "fr": "Battle de danse devant la bannière Afro Urban Dance Workshop",
-        "it": "Battle di danza davanti allo striscione Afro Urban Dance Workshop"
+        "it": "Battle di danza davanti allo striscione Afro Urban Dance Workshop",
+        "en": "Dance battle in front of the Afro Urban Dance Workshop banner"
       }
     },
     {
@@ -28,7 +30,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "Un coach Falacha mène la chorégraphie",
-        "it": "Un coach Falacha guida la coreografia"
+        "it": "Un coach Falacha guida la coreografia",
+        "en": "A Falacha coach leading the choreography"
       }
     },
     {
@@ -36,7 +39,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "Une danseuse en plein mouvement pendant le workshop",
-        "it": "Una ballerina in pieno movimento durante il workshop"
+        "it": "Una ballerina in pieno movimento durante il workshop",
+        "en": "A dancer in full motion during the workshop"
       }
     },
     {
@@ -44,7 +48,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "La salle pleine pendant le workshop",
-        "it": "La sala piena durante il workshop"
+        "it": "La sala piena durante il workshop",
+        "en": "A packed room during the workshop"
       }
     },
     {
@@ -52,7 +57,8 @@
       "theme": "Communauté",
       "alt": {
         "fr": "Deux participantes tout sourire",
-        "it": "Due partecipanti sorridenti"
+        "it": "Due partecipanti sorridenti",
+        "en": "Two participants all smiles"
       }
     },
     {
@@ -60,7 +66,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "Coach en action au milieu des danseurs",
-        "it": "Coach in azione tra i ballerini"
+        "it": "Coach in azione tra i ballerini",
+        "en": "Coach in action among the dancers"
       }
     },
     {
@@ -68,7 +75,8 @@
       "theme": "Communauté",
       "alt": {
         "fr": "Deux membres de la maison en t-shirt House of Falacha",
-        "it": "Due membri della casa con la maglietta House of Falacha"
+        "it": "Due membri della casa con la maglietta House of Falacha",
+        "en": "Two members of the house in House of Falacha t-shirts"
       }
     },
     {
@@ -76,7 +84,8 @@
       "theme": "Communauté",
       "alt": {
         "fr": "Cercle de danse et encouragements",
-        "it": "Cerchio di danza e incoraggiamenti"
+        "it": "Cerchio di danza e incoraggiamenti",
+        "en": "Dance circle and cheering"
       }
     },
     {
@@ -84,7 +93,8 @@
       "theme": "Workshops",
       "alt": {
         "fr": "Chorégraphie en groupe",
-        "it": "Coreografia di gruppo"
+        "it": "Coreografia di gruppo",
+        "en": "Group choreography"
       }
     },
     {
@@ -92,7 +102,8 @@
       "theme": "Événements",
       "alt": {
         "fr": "La bannière de l'Afro Urban Dance Workshop",
-        "it": "Lo striscione dell'Afro Urban Dance Workshop"
+        "it": "Lo striscione dell'Afro Urban Dance Workshop",
+        "en": "The Afro Urban Dance Workshop banner"
       }
     }
   ],
@@ -102,7 +113,8 @@
       "type": "video",
       "title": {
         "fr": "Notre deuxième famille",
-        "it": "La nostra seconda famiglia"
+        "it": "La nostra seconda famiglia",
+        "en": "Our second family"
       },
       "theme": "Communauté",
       "date": "2026-10-28"
@@ -112,7 +124,8 @@
       "type": "video",
       "title": {
         "fr": "Une journée dans un orphelinat au Cameroun",
-        "it": "Una giornata in un orfanotrofio in Camerun"
+        "it": "Una giornata in un orfanotrofio in Camerun",
+        "en": "A day at an orphanage in Cameroon"
       },
       "theme": "Solidarité",
       "date": "2026-10-26"
@@ -122,7 +135,8 @@
       "type": "video",
       "title": {
         "fr": "Les locaux du workshop 2027",
-        "it": "La sede del workshop 2027"
+        "it": "La sede del workshop 2027",
+        "en": "The 2027 workshop venue"
       },
       "theme": "Événements",
       "date": "2026-10-08"
@@ -132,7 +146,8 @@
       "type": "video",
       "title": {
         "fr": "Merci à nos coachs",
-        "it": "Grazie ai nostri coach"
+        "it": "Grazie ai nostri coach",
+        "en": "Thank you to our coaches"
       },
       "theme": "Communauté",
       "date": "2026-10-06"
@@ -142,7 +157,8 @@
       "type": "video",
       "title": {
         "fr": "Les sourires du workshop",
-        "it": "I sorrisi del workshop"
+        "it": "I sorrisi del workshop",
+        "en": "Workshop smiles"
       },
       "theme": "Workshops",
       "date": "2026-10-03"
@@ -152,7 +168,8 @@
       "type": "video",
       "title": {
         "fr": "Souvenirs de workshop",
-        "it": "Ricordi del workshop"
+        "it": "Ricordi del workshop",
+        "en": "Workshop memories"
       },
       "theme": "Workshops",
       "date": "2026-10-01"
@@ -162,7 +179,8 @@
       "type": "photo",
       "title": {
         "fr": "La maison rouvre bientôt",
-        "it": "La casa riapre presto"
+        "it": "La casa riapre presto",
+        "en": "The house reopens soon"
       },
       "theme": "Communauté",
       "date": "2026-09-24"
@@ -172,7 +190,8 @@
       "type": "video",
       "title": {
         "fr": "La bonne humeur en danse",
-        "it": "Il buonumore in danza"
+        "it": "Il buonumore in danza",
+        "en": "Good vibes on the dance floor"
       },
       "theme": "Workshops",
       "date": "2026-05-14"
@@ -182,7 +201,8 @@
       "type": "video",
       "title": {
         "fr": "Les workshops du samedi",
-        "it": "I workshop del sabato"
+        "it": "I workshop del sabato",
+        "en": "Saturday workshops"
       },
       "theme": "Workshops",
       "date": "2026-05-12"
@@ -192,7 +212,8 @@
       "type": "photo",
       "title": {
         "fr": "Le workshop 2026 en images",
-        "it": "Il workshop 2026 in immagini"
+        "it": "Il workshop 2026 in immagini",
+        "en": "Workshop 2026 in pictures"
       },
       "theme": "Workshops",
       "date": "2026-03-21"
@@ -202,7 +223,8 @@
       "type": "photo",
       "title": {
         "fr": "L'after event en images",
-        "it": "L'after event in immagini"
+        "it": "L'after event in immagini",
+        "en": "The after event in pictures"
       },
       "theme": "Événements",
       "date": "2026-03-21"
@@ -212,7 +234,8 @@
       "type": "video",
       "title": {
         "fr": "Instant détente avec le DJ",
-        "it": "Momento relax con il DJ"
+        "it": "Momento relax con il DJ",
+        "en": "Chill time with the DJ"
       },
       "theme": "Événements",
       "date": "2026-03-19"
@@ -222,7 +245,8 @@
       "type": "video",
       "title": {
         "fr": "Les interviews du workshop",
-        "it": "Le interviste del workshop"
+        "it": "Le interviste del workshop",
+        "en": "Workshop interviews"
       },
       "theme": "Workshops",
       "date": "2026-03-18"

@@ -1,13 +1,37 @@
-// Textes du site en français et en italien. Pour corriger une traduction, modifie ce fichier.
+// Textes du site en français, italien et anglais. Pour corriger une traduction, modifie ce fichier.
 
-export const langs = ["fr", "it"] as const;
+export const langs = ["fr", "it", "en"] as const;
 export type Lang = (typeof langs)[number];
 export type Localized = Record<Lang, string>;
 
 export const isLang = (v: string): v is Lang => (langs as readonly string[]).includes(v);
-export const locale = (lang: Lang) => (lang === "it" ? "it-IT" : "fr-FR");
-/** Préfixe un chemin avec la langue : l("it", "/boutique") → "/it/boutique". */
-export const l = (lang: Lang, path = "/") => `/${lang}${path === "/" ? "" : path}`;
+export const locale = (lang: Lang) => ({ fr: "fr-FR", it: "it-IT", en: "en-GB" })[lang];
+
+/**
+ * Adresses traduites. La clé est le chemin interne (le dossier dans app/[lang]/, en français) ;
+ * next.config.ts réécrit chaque adresse traduite vers ce dossier et redirige l'ancienne adresse.
+ */
+export const routes: Record<string, Localized> = {
+  workshops: { fr: "workshops", it: "workshop", en: "workshops" },
+  boutique: { fr: "boutique", it: "negozio", en: "shop" },
+  "cours-perso": { fr: "cours-perso", it: "lezioni-private", en: "private-classes" },
+  galerie: { fr: "galerie", it: "galleria", en: "gallery" },
+  "a-propos": { fr: "a-propos", it: "chi-siamo", en: "about" },
+  panier: { fr: "panier", it: "carrello", en: "cart" },
+  merci: { fr: "merci", it: "grazie", en: "thank-you" },
+};
+
+/** Lien traduit : l("it", "/boutique") → "/it/negozio" ; l("en", "/#contact") → "/en#contact". */
+export const l = (lang: Lang, path = "/") => {
+  const [base, hash] = path.split("#");
+  const key = base.replace(/^\/+|\/+$/g, "");
+  const slug = key ? (routes[key]?.[lang] ?? key) : "";
+  return `/${lang}${slug ? `/${slug}` : ""}${hash ? `#${hash}` : ""}`;
+};
+
+/** Retrouve la clé interne d'une adresse affichée (« negozio » → « boutique »). */
+export const routeKey = (slug: string) =>
+  Object.keys(routes).find((k) => langs.some((lg) => routes[k][lg] === slug)) ?? slug;
 
 const fr = {
   langName: "Français",
@@ -464,5 +488,231 @@ const it: Dict = {
   },
 };
 
-export const dicts: Record<Lang, Dict> = { fr, it };
+const en: Dict = {
+  langName: "English",
+  nav: {
+    workshops: "Workshops",
+    boutique: "Shop",
+    cours: "Private classes",
+    galerie: "Gallery",
+    apropos: "About",
+    contact: "Contact",
+  },
+  common: {
+    cart: "Cart",
+    menu: "Menu",
+    home: "Home",
+    tagline: "Where every event becomes a memory.",
+    pillars: ["Dance", "Art", "Culture", "Sport"],
+    photoCredit: "Photos: Randy_237 photography and Visora",
+    retrait: "No shipping: pick up your order on site, on the day of the event.",
+    stripe: "Secure payment with Stripe.",
+    findUs: "Find us",
+    orders: "Orders",
+    follow: "Follow",
+    writeUs: "Write to us",
+    soon: "Coming soon",
+  },
+  meta: {
+    title: "House of Falacha — Dance, art, culture and sport in Reggio Emilia",
+    description:
+      "H.O.F Academy: afro dance workshops in Reggio Emilia, cultural events, official merch and private dance or fitness classes.",
+  },
+  home: {
+    heroTitle: "Dance, art, culture and sport in Reggio Emilia. Where every event becomes a memory.",
+    heroText: "Afro dance workshops, big events, official merch and private classes in your city.",
+    ctaEvent: "Next event",
+    ctaShop: "The shop",
+    nextTitle: ["The", "next", "big date"],
+    nextText: "The new edition of the Afro Urban Dance Workshop is coming to Reggio Emilia.",
+    nextCta: "See the event",
+    weekly: "Want to dance before then? Regular workshops are announced on TikTok and WhatsApp.",
+    maisonTitle: ["Your", "second", "family"],
+    maisonBody:
+      "House of Falacha brings together the diaspora and everyone who loves to move, in Reggio Emilia. Afro dance, afro urban, fitness: we learn, we sweat, we laugh, and we leave with memories.",
+    maisonCta: "Our story",
+    pillars: [
+      { title: "Dance", text: "Afro and afro urban choreography, led by the house coaches." },
+      { title: "Culture", text: "Cameroonian roots, life in Italy, and the music that connects them." },
+      { title: "Sharing", text: "Workshops, after events, collaborations: the community comes first." },
+    ],
+    imagesTitle: ["The", "house", "in pictures"],
+    imagesCta: "Full gallery",
+    merchTitle: ["The", "official", "merch"],
+    merchText: "The house t-shirts and accessories are coming to the shop soon.",
+    merchCta: "Visit the shop",
+    tiktokTitle: ["Live", "on", "TikTok"],
+    tiktokGallery: "See the gallery",
+    coursTitle: ["A class", "just", "for you"],
+    coursText: "With friends, for a birthday or a team: a coach comes to your city for a dance or fitness class.",
+    coursCta: "Request a class",
+    charityTitle: ["Dance", "that", "gives back"],
+    charityText:
+      "The House of Falacha team visited an orphanage in Cameroon for a fun day with the children. Part of every event supports these actions.",
+    charityCta: "Suggest an action",
+    timelineTitle: ["The", "best", "moments"],
+    timeline: [
+      { year: "2026", title: "Workshop 2026", text: "A big day of dance with coaches, DJs and participants from all over Italy." },
+      { year: "2026", title: "The after event", text: "The workshop carried on into the night: DJ set and afro vibes until the end." },
+      { year: "2027", title: "Afro Urban Dance Workshop", text: "On 7 March 2027 at SD Factory Studio, Reggio Emilia." },
+    ],
+    sponsors: "Our supporters",
+    contactTitle: ["Write", "to the", "house"],
+    contactText: "Workshop, collaboration, an event to organise: we reply quickly on WhatsApp or by email.",
+  },
+  events: {
+    heroTitle: ["The", "next", "workshop"],
+    heroText:
+      "Afro dance, afro urban and choreography in Reggio Emilia. Bookings will open here, with online payment and a confirmation email as your ticket.",
+    date: "Date",
+    time: "Time",
+    timeSoon: "Announced soon",
+    place: "Venue",
+    level: "Level",
+    perSeat: "/ seat",
+    seatsLeft: (n: number) => `${n} seat${n > 1 ? "s" : ""} left`,
+    full: "Sold out",
+    soon: "Bookings opening soon",
+    soonText: "To hear as soon as bookings open, message us on WhatsApp or follow us on TikTok.",
+    notify: "Notify me",
+    none: "New dates are coming soon. Follow us on TikTok so you don't miss them.",
+    infos: [
+      { title: "Your ticket", text: "Once bookings are open, your Stripe confirmation email will be your entry ticket." },
+      { title: "In a group", text: "Up to 6 seats per booking. For more, request a private class." },
+      { title: "Regular workshops", text: "They are announced on TikTok and WhatsApp, week by week." },
+    ],
+    reserve: "Book",
+    redirect: "Redirecting…",
+    seats: (n: number) => `${n} seat${n > 1 ? "s" : ""}`,
+    seatsLabel: "Number of seats",
+  },
+  shop: {
+    heroTitle: ["The", "house", "shop"],
+    heroText: "T-shirts and accessories with the House of Falacha lotus. Order here, pay with Stripe, pick up at the next event.",
+    closedTitle: "The shop opens soon.",
+    closedText: "Prices, sizes and stock are being prepared. Here is a preview of the merch on its way.",
+    retraitTitle: "Pick-up on site.",
+    retraitText:
+      "No shipping for now: your order will be waiting at the House of Falacha stand on the day of the event. Just show your confirmation email.",
+    size: "Size",
+    oneSize: "One size",
+    sizeLabel: (s: string) => `Size ${s}`,
+    inStock: (n: number) => `${n} in stock`,
+    lowStock: (n: number) => `Only ${n} left`,
+    soldOut: "Sold out",
+    add: "Add to cart",
+    added: "Added to cart",
+    maxed: "All available stock is in your cart",
+  },
+  cours: {
+    heroTitle: ["We come", "to dance", "with you"],
+    heroText:
+      "With friends, family, for a birthday, a hen or stag party or a team: book a House of Falacha coach for a dance or fitness class in your city.",
+    how: "How it works",
+    steps: [
+      ["Tell us about your plans", "Type of class, city, date and number of people."],
+      ["A coach calls you back", "They suggest a programme and a price within 48 hours."],
+      ["Let's dance", "The coach comes to you with the music and the energy."],
+    ],
+    form: {
+      firstname: "First name *",
+      lastname: "Last name",
+      email: "Email *",
+      phone: "Phone / WhatsApp *",
+      type: "Type of class *",
+      types: ["Dance", "Fitness", "Dance + fitness"],
+      city: "City *",
+      cityPh: "Reggio Emilia, Parma, Bologna…",
+      occasion: "Occasion",
+      occasions: ["With friends", "Birthday", "Hen / stag party", "Wedding", "Company / association", "School", "Other"],
+      date: "Preferred date",
+      people: "People",
+      message: "Your plans",
+      messagePh: "Dance style, length, venue, group level…",
+      send: "Send my request",
+      sending: "Sending…",
+      sentTitle: "Request sent",
+      sentText: "A House of Falacha coach will get back to you within 48 hours to set the programme and price.",
+      error: "Sending failed. Please try again.",
+    },
+  },
+  galerie: {
+    heroTitle: ["Our", "memories", "in pictures"],
+    heroText: "Workshops, after events and charity actions: relive the house's best moments. Tap a video to play it.",
+    all: "All",
+    filter: "Filter by theme",
+    photos: "Photos",
+    videos: "TikTok videos",
+    posts: (n: number) => `${n} post${n > 1 ? "s" : ""}`,
+    empty: "Nothing in this theme yet.",
+    seePhotos: "See the photos",
+    close: "Close",
+    prev: "Previous photo",
+    next: "Next photo",
+    footer: "All our videos, Saturday after Saturday, are on TikTok.",
+    themes: { Workshops: "Workshops", "Événements": "Events", "Solidarité": "Charity", "Communauté": "Community" },
+  },
+  apropos: {
+    heroTitle: ["Our", "story", "and values"],
+    intro:
+      "House of Falacha is the H.O.F academy: an open house in Reggio Emilia where dance, art, culture and sport bring together the diaspora and everyone who loves to move.",
+    histoire: [
+      "It all started with a simple wish: to create a place in Italy with the energy of the parties and dance classes from back home, where everyone feels welcome like family.",
+      "The workshops became the heart of the house. Around them, House of Falacha organises big events, after events and charity actions all the way to Cameroon.",
+      "The lotus in the logo sums up the spirit of the house: each petal is a person, and together they form the flower.",
+    ],
+    chiffres: [
+      { value: "7 March 2027", label: "next big workshop" },
+      { value: "4 pillars", label: "dance, art, culture, sport" },
+      { value: "2 countries", label: "Cameroon and Italy, together" },
+    ],
+    valeursTitle: ["What", "drives", "us"],
+    valeurs: [
+      { title: "Welcome", text: "All levels, all ages, all backgrounds. Come as you are, leave with a second family." },
+      { title: "Pass it on", text: "The coaches share the steps, but also the culture and music behind them." },
+      { title: "Bring together", text: "Between Cameroon and Italy, the house connects cultures and generations." },
+      { title: "Give back", text: "Part of the energy of every event goes to charity actions, like the visit to an orphanage in Cameroon." },
+    ],
+    equipeTitle: ["The", "house", "team"],
+    equipeText: "The founder and the coaches who bring the workshops to life.",
+    founder: "Founder of House of Falacha",
+    coach: "Coach",
+    parcoursTitle: ["The", "H.O.F", "journey"],
+    visora: "Photos and videos of the events are by Visora, partner of the house.",
+    join: "Want to join the house, become a partner or organise an event with us?",
+    joinCta: "See the next event",
+  },
+  panier: {
+    title: "Your cart",
+    empty: "Your cart is empty.",
+    shop: "Visit the shop",
+    qty: (name: string) => `Quantity of ${name}`,
+    minus: "Remove one",
+    plus: "Add one",
+    total: "Total",
+    pay: "Pay with Stripe",
+    paying: "Redirecting to Stripe…",
+    clear: "Empty cart",
+  },
+  merci: {
+    title: ["Thank", "you", "!"],
+    text: "Your payment is confirmed. Stripe is sending you an email: keep it, it is your workshop ticket and your shop pick-up voucher.",
+    paid: "Total paid",
+    back: "Back to home",
+  },
+  errors: {
+    stripeOff: "Online payment is not active yet. Message us on WhatsApp to book.",
+    empty: "Your cart is empty.",
+    gone: "An item is no longer available. Empty your cart and try again.",
+    stock: (name: string, left: number) => `Not enough stock for "${name}". ${left} left.`,
+    tooBig: "Cart too large for a single order. Split it in two.",
+    start: "Payment could not start. Please try again.",
+    required: "Please fill in the required fields.",
+    email: "Invalid email address.",
+    send: "Sending failed. Try again or message us on WhatsApp.",
+    pickup: "No shipping: items are picked up on site on the day of the event. Workshop seats are personal.",
+  },
+};
+
+export const dicts: Record<Lang, Dict> = { fr, it, en };
 export const getDict = (lang: Lang) => dicts[lang];

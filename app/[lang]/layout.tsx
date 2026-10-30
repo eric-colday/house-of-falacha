@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: { default: t.meta.title, template: "%s · House of Falacha" },
     description: t.meta.description,
     icons: { icon: "/lotus.png" },
-    alternates: { languages: { fr: "/fr", it: "/it" } },
+    alternates: { languages: { fr: "/fr", it: "/it", en: "/en" } },
     openGraph: {
       title: "House of Falacha — H.O.F Academy",
       description: t.meta.description,
       images: ["/galerie/photo-de-groupe.jpg"],
-      locale: lang === "it" ? "it_IT" : "fr_FR",
+      locale: { fr: "fr_FR", it: "it_IT", en: "en_GB" }[lang],
       type: "website",
     },
   };

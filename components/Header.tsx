@@ -33,7 +33,9 @@ export function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-2 xl:hidden">
-          <LangSwitch />
+          <div className="hidden sm:block">
+            <LangSwitch />
+          </div>
           <CartLink />
           <details className="relative">
             <summary className="btn btn-contour cursor-pointer list-none px-4 py-2">{t.common.menu}</summary>
@@ -43,6 +45,9 @@ export function Header({ lang }: { lang: Lang }) {
                   {item.label}
                 </a>
               ))}
+              <div className="mt-2 border-t border-or/30 px-5 pt-4 pb-2 sm:hidden">
+                <LangSwitch />
+              </div>
             </div>
           </details>
         </div>

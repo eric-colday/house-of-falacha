@@ -1,75 +1,134 @@
 {
   "currency": "eur",
-  "_aide": "boutiqueOuverte : passer à true quand David a fixé les prix, tailles et stocks. Prix en centimes. Un événement s'ouvre à la réservation avec reservationsOuvertes: true + price + capacity.",
+  "_aide": "boutiqueOuverte : passer à true quand David a fixé les prix, tailles et stocks. Prix en centimes. Un événement s'ouvre à la réservation avec reservationsOuvertes: true + price + capacity. Chaque texte a ses versions fr, it et en.",
   "boutiqueOuverte": false,
   "products": [
     {
       "id": "tshirt-hof",
-      "name": { "fr": "T-shirt H.O.F Academy", "it": "T-shirt H.O.F Academy" },
-      "category": { "fr": "T-shirts", "it": "T-shirt" },
+      "name": {
+        "fr": "T-shirt H.O.F Academy",
+        "it": "T-shirt H.O.F Academy",
+        "en": "H.O.F Academy T-shirt"
+      },
+      "category": {
+        "fr": "T-shirts",
+        "it": "T-shirt",
+        "en": "T-shirts"
+      },
       "description": {
         "fr": "Le t-shirt des coachs et de la maison, lotus doré sur le cœur.",
-        "it": "La maglietta dei coach e della casa, loto dorato sul cuore."
+        "it": "La maglietta dei coach e della casa, loto dorato sul cuore.",
+        "en": "The coaches' and the house t-shirt, golden lotus over the heart."
       },
       "price": 2500,
       "color": "#1b2033",
       "visual": "tshirt",
       "photo": "/galerie/equipe-tshirt-falacha.jpg",
-      "stock": { "S": 10, "M": 15, "L": 15, "XL": 8 }
+      "stock": {
+        "S": 10,
+        "M": 15,
+        "L": 15,
+        "XL": 8
+      }
     },
     {
       "id": "tshirt-falacha-blanc",
-      "name": { "fr": "T-shirt House of Falacha blanc", "it": "T-shirt House of Falacha bianca" },
-      "category": { "fr": "T-shirts", "it": "T-shirt" },
+      "name": {
+        "fr": "T-shirt House of Falacha blanc",
+        "it": "T-shirt House of Falacha bianca",
+        "en": "White House of Falacha T-shirt"
+      },
+      "category": {
+        "fr": "T-shirts",
+        "it": "T-shirt",
+        "en": "T-shirts"
+      },
       "description": {
         "fr": "Coupe ample, logo House of Falacha sur la poitrine.",
-        "it": "Vestibilità ampia, logo House of Falacha sul petto."
+        "it": "Vestibilità ampia, logo House of Falacha sul petto.",
+        "en": "Relaxed fit, House of Falacha logo on the chest."
       },
       "price": 2500,
       "color": "#ffffff",
       "visual": "tshirt",
       "photo": "/galerie/coach-en-action.jpg",
-      "stock": { "S": 8, "M": 12, "L": 12, "XL": 6 }
+      "stock": {
+        "S": 8,
+        "M": 12,
+        "L": 12,
+        "XL": 6
+      }
     },
     {
       "id": "casquette-hof",
-      "name": { "fr": "Casquette H.O.F", "it": "Cappellino H.O.F" },
-      "category": { "fr": "Accessoires", "it": "Accessori" },
+      "name": {
+        "fr": "Casquette H.O.F",
+        "it": "Cappellino H.O.F",
+        "en": "H.O.F Cap"
+      },
+      "category": {
+        "fr": "Accessoires",
+        "it": "Accessori",
+        "en": "Accessories"
+      },
       "description": {
         "fr": "Casquette réglable, lotus doré brodé.",
-        "it": "Cappellino regolabile, loto dorato ricamato."
+        "it": "Cappellino regolabile, loto dorato ricamato.",
+        "en": "Adjustable cap with an embroidered golden lotus."
       },
       "price": 1800,
       "color": "#1b2033",
       "visual": "cap",
-      "stock": { "unique": 20 }
+      "stock": {
+        "unique": 20
+      }
     },
     {
       "id": "tote-falacha",
-      "name": { "fr": "Tote bag Falacha", "it": "Tote bag Falacha" },
-      "category": { "fr": "Accessoires", "it": "Accessori" },
+      "name": {
+        "fr": "Tote bag Falacha",
+        "it": "Tote bag Falacha",
+        "en": "Falacha Tote bag"
+      },
+      "category": {
+        "fr": "Accessoires",
+        "it": "Accessori",
+        "en": "Accessories"
+      },
       "description": {
         "fr": "Sac en toile pour tes affaires de danse.",
-        "it": "Borsa in tela per le tue cose da ballo."
+        "it": "Borsa in tela per le tue cose da ballo.",
+        "en": "Canvas bag for your dance gear."
       },
       "price": 1200,
       "color": "#efe6d2",
       "visual": "bag",
-      "stock": { "unique": 25 }
+      "stock": {
+        "unique": 25
+      }
     }
   ],
   "workshops": [
     {
       "id": "afro-urban-2027-03-07",
-      "title": { "fr": "Afro Urban Dance Workshop", "it": "Afro Urban Dance Workshop" },
+      "title": {
+        "fr": "Afro Urban Dance Workshop",
+        "it": "Afro Urban Dance Workshop",
+        "en": "Afro Urban Dance Workshop"
+      },
       "subtitle": {
         "fr": "Le prochain grand événement de la maison",
-        "it": "Il prossimo grande evento della casa"
+        "it": "Il prossimo grande evento della casa",
+        "en": "The house's next big event"
       },
       "date": "2027-03-07",
       "time": null,
       "place": "SD Factory Studio, Reggio Emilia",
-      "level": { "fr": "Tous niveaux", "it": "Tutti i livelli" },
+      "level": {
+        "fr": "Tous niveaux",
+        "it": "Tutti i livelli",
+        "en": "All levels"
+      },
       "photo": "/galerie/battle-afro-urban.jpg",
       "reservationsOuvertes": false,
       "price": null,

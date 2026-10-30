@@ -5,7 +5,7 @@ import { Lotus } from "@/components/Logo";
 import { ReserveWorkshop } from "@/components/ReserveWorkshop";
 import { formatDate, formatPrice, workshopSku, workshops } from "@/lib/catalog";
 import { site } from "@/lib/content";
-import { getDict, isLang } from "@/lib/i18n";
+import { getDict, isLang, locale } from "@/lib/i18n";
 import { getStock } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
@@ -48,7 +48,7 @@ export default async function Workshops({ params }: { params: Promise<{ lang: st
                     <div className="flex min-w-0 flex-col gap-6 p-6 sm:p-8">
                       <div className="flex items-end gap-4">
                         <span className="text-7xl font-light leading-none text-or-fonce">{d.getDate()}</span>
-                        <span className="lettrage pb-1 text-xl">{d.toLocaleDateString(lang === "it" ? "it-IT" : "fr-FR", { month: "long", year: "numeric" })}</span>
+                        <span className="lettrage pb-1 text-xl">{d.toLocaleDateString(locale(lang), { month: "long", year: "numeric" })}</span>
                       </div>
                       <div>
                         <p className="text-ardoise">{w.subtitle[lang]}</p>

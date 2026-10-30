@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { currency, findSku } from "@/lib/catalog";
-import { getDict, isLang, type Lang } from "@/lib/i18n";
+import { getDict, isLang, l, type Lang } from "@/lib/i18n";
 import { encodeItems, getStock } from "@/lib/stock";
 import { stripe } from "@/lib/stripe";
 
@@ -51,8 +51,8 @@ export async function POST(request: Request) {
     customer_creation: "always",
     metadata: { items: encoded, lang },
     custom_text: { submit: { message: t.errors.pickup } },
-    success_url: `${origin}/${lang}/merci?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${origin}/${lang}/panier`,
+    success_url: `${origin}${l(lang, "/merci")}?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${origin}${l(lang, "/panier")}`,
   });
 
   return NextResponse.json({ url: session.url });

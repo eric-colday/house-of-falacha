@@ -33,11 +33,25 @@ Créer un formulaire HubSpot avec les champs `firstname`, `lastname`, `email`, `
 puis renseigner `HUBSPOT_PORTAL_ID` et `HUBSPOT_FORM_ID`. Le type de cours, l'occasion, la date et le nombre de personnes arrivent dans `message`.
 
 ## Langues
-Le site est bilingue : français sur `/fr` (par défaut, `/` y redirige) et italien sur `/it`, avec un sélecteur FR / IT dans l'en-tête.
-Tous les textes sont dans `lib/i18n.ts` ; les noms de produits, événements et légendes ont leurs versions `fr` / `it` dans `data/`.
+Le site est en trois langues : français sur `/fr` (par défaut, `/` y redirige), italien sur `/it` et anglais sur `/en`, avec un sélecteur FR / IT / EN qui garde la même page.
+Tous les textes sont dans `lib/i18n.ts` ; les noms de produits, événements et légendes ont leurs versions `fr` / `it` / `en` dans `data/`.
+
+Les adresses sont traduites (table `routes` de `lib/i18n.ts`) :
+
+| Page | Français | Italiano | English |
+|---|---|---|---|
+| Workshops | `/fr/workshops` | `/it/workshop` | `/en/workshops` |
+| Boutique | `/fr/boutique` | `/it/negozio` | `/en/shop` |
+| Cours perso | `/fr/cours-perso` | `/it/lezioni-private` | `/en/private-classes` |
+| Galerie | `/fr/galerie` | `/it/galleria` | `/en/gallery` |
+| À propos | `/fr/a-propos` | `/it/chi-siamo` | `/en/about` |
+| Panier | `/fr/panier` | `/it/carrello` | `/en/cart` |
+| Merci | `/fr/merci` | `/it/grazie` | `/en/thank-you` |
+
+Les fichiers restent dans `app/[lang]/<nom français>/` : `next.config.ts` réécrit les adresses traduites vers eux et redirige (308) une adresse non traduite, par exemple `/en/boutique` → `/en/shop`. Dans le code, toujours construire les liens avec `l(lang, "/boutique")`.
 
 ## Pages
-Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci — chacune sous `/fr/…` et `/it/…`.
+Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci — dans chaque langue (voir le tableau ci-dessus).
 
 ## Galerie
 - Vidéos TikTok : `data/galerie.json` → `tiktok`. Pour en ajouter une, copie l'identifiant à la fin de l'adresse (`…/video/7700908810659056929`), un titre, un thème et la date. Elles se lisent directement sur le site avec le lecteur officiel TikTok.
@@ -54,7 +68,7 @@ Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci —
 - Prochain grand événement : Afro Urban Dance Workshop, 7 mars 2027, SD Factory Studio, Reggio Emilia.
 - Coachs : The Ryan, Lady Brown, Caporal237. Visora = studio photo/vidéo partenaire.
 - Sponsors : La_ProceduR, Visora, Destroy Party, TheOldDreams, Bahamshez.
-- Contact : sibafeuedavid@gmail.com, Instagram house_of_falacha. Site en français et italien.
+- Contact : sibafeuedavid@gmail.com, Instagram house_of_falacha. Site en français, italien et anglais.
 
 ## À compléter avec David
 - Prix, tailles et stocks du merch (boutique affichée « bientôt disponible » en attendant).

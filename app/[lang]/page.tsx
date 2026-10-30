@@ -4,7 +4,7 @@ import { ProductVisual } from "@/components/ProductVisual";
 import { TikTokFeed } from "@/components/TikTokFeed";
 import { boutiqueOuverte, formatDate, formatPrice, products, workshops } from "@/lib/catalog";
 import { partners, photosMaison, site } from "@/lib/content";
-import { getDict, isLang, l } from "@/lib/i18n";
+import { getDict, isLang, l, locale } from "@/lib/i18n";
 
 function Titre({ lignes, className = "" }: { lignes: [string, string, string]; className?: string }) {
   return (
@@ -66,7 +66,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <div className="couture mt-8 pt-6">
                 <p className="text-6xl font-light text-or-fonce">
                   {new Date(`${prochain.date}T12:00:00`).getDate()}{" "}
-                  <span className="lettrage text-3xl">{new Date(`${prochain.date}T12:00:00`).toLocaleDateString(lang === "it" ? "it-IT" : "fr-FR", { month: "long", year: "numeric" })}</span>
+                  <span className="lettrage text-3xl">{new Date(`${prochain.date}T12:00:00`).toLocaleDateString(locale(lang), { month: "long", year: "numeric" })}</span>
                 </p>
                 <p className="lettrage mt-4 text-xl">{prochain.title[lang]}</p>
                 <p className="mt-1 text-ardoise">{prochain.place}</p>

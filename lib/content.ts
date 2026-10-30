@@ -5,7 +5,7 @@ export const site = {
   name: "House of Falacha",
   short: "H.O.F Academy",
   city: "Reggio Emilia",
-  country: { fr: "Italie", it: "Italia" },
+  country: { fr: "Italie", it: "Italia", en: "Italy" },
   phone: "+39 352 020 2406",
   whatsapp: "https://wa.me/393520202406",
   email: "sibafeuedavid@gmail.com",

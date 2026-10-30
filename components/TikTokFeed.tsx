@@ -34,7 +34,7 @@ export function TikTokFeed() {
           <a target="_blank" rel="noreferrer" href={site.tiktok} className="font-bold underline">
             {site.tiktokHandle}
           </a>
-          <p className="mt-2 text-sm text-ardoise">{lang === "it" ? "Caricamento degli ultimi video…" : "Chargement des dernières vidéos…"}</p>
+          <p className="mt-2 text-sm text-ardoise">{{ fr: "Chargement des dernières vidéos…", it: "Caricamento degli ultimi video…", en: "Loading the latest videos…" }[lang]}</p>
         </section>
       </blockquote>
     </div>
