@@ -8,19 +8,25 @@
   Élément mémorable : le grand lotus qui s'ouvre pétale par pétale à l'arrivée sur l'accueil.
 */
 @theme {
-  --color-blanc: #ffffff;
-  --color-lin: #f8f5ef;
-  --color-or: #b8955a;
-  --color-or-clair: #e2cfa6;
-  --color-or-fonce: #8a6a35;
-  --color-marine: #1b2033;
-  --color-ardoise: #5a6072;
+  /* Version sombre : fond bleu nuit (le contour du logo), or brodé, texte ivoire.
+     Les noms historiques sont gardés : « blanc » = fond de page, « marine » = texte principal. */
+  --color-blanc: #0f1326;
+  --color-lin: #161b32;
+  --color-or: #c4a266;
+  --color-or-clair: #ecdcb6;
+  --color-or-fonce: #d8bb84;
+  --color-marine: #efe8da;
+  --color-ardoise: #a8acbe;
+  --color-abysse: #090c19;
+  --color-ivoire: #efe8da;
+  --color-nuit: #0f1326;
   --font-sans: "Jost", "Futura", "Century Gothic", "Avenir Next", sans-serif;
 }
 
 :root {
-  --logo-or: #b8955a;
-  --logo-trait: #1b2033;
+  --logo-or: #c4a266;
+  --logo-trait: #070a16;
+  color-scheme: dark;
 }
 
 html {
@@ -77,7 +83,7 @@ h3 {
   background-image: repeating-linear-gradient(
     90deg,
     transparent 0 11px,
-    color-mix(in srgb, var(--color-or) 35%, transparent) 11px 12px
+    color-mix(in srgb, var(--color-or) 22%, transparent) 11px 12px
   );
 }
 
@@ -107,25 +113,28 @@ h3 {
   cursor: not-allowed;
 }
 .btn-marine {
-  background: var(--color-marine);
-  color: var(--color-blanc);
+  background: var(--color-or);
+  border-color: var(--color-or);
+  color: var(--color-nuit);
 }
 .btn-marine:hover:not(:disabled) {
-  background: var(--color-or-fonce);
-  border-color: var(--color-or-fonce);
+  background: var(--color-or-clair);
+  border-color: var(--color-or-clair);
 }
 .btn-contour {
   background: transparent;
-  color: var(--color-marine);
+  border-color: color-mix(in srgb, var(--color-or) 70%, transparent);
+  color: var(--color-ivoire);
 }
 .btn-contour:hover:not(:disabled) {
-  background: var(--color-marine);
-  color: var(--color-blanc);
+  background: var(--color-ivoire);
+  border-color: var(--color-ivoire);
+  color: var(--color-nuit);
 }
 .btn-or {
   background: var(--color-or);
   border-color: var(--color-or);
-  color: var(--color-marine);
+  color: var(--color-nuit);
 }
 .btn-or:hover:not(:disabled) {
   background: var(--color-or-clair);

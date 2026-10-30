@@ -33,7 +33,7 @@ export function AddToCart({ name, price, variants }: { name: string; price: numb
               disabled={v.stock === 0}
               onClick={() => setSelected(v.sku)}
               className={`h-11 min-w-11 rounded-full border px-3 font-medium disabled:cursor-not-allowed disabled:opacity-30 disabled:line-through ${
-                selected === v.sku ? "border-marine bg-marine text-blanc" : "border-or/60 hover:border-marine"
+                selected === v.sku ? "border-or bg-or text-nuit" : "border-or/60 hover:border-marine"
               }`}
             >
               {v.variant}

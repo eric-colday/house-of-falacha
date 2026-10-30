@@ -63,7 +63,7 @@ export function CartLink() {
   return (
     <a href="/panier" className="btn btn-marine px-4 py-2">
       Panier
-      <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-or px-1.5 text-xs text-marine tabular-nums">{count}</span>
+      <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-or px-1.5 text-xs text-nuit tabular-nums">{count}</span>
     </a>
   );
 }

@@ -36,12 +36,12 @@ export default function APropos() {
       </section>
 
       {/* EN QUELQUES MOTS */}
-      <section className="border-y border-or/40 bg-marine text-blanc">
+      <section className="border-y border-or/30 bg-abysse text-ivoire">
         <dl className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
           {apropos.chiffres.map((c) => (
             <div key={c.value}>
               <dt className="text-[clamp(1.8rem,3.5vw,2.6rem)] font-light text-or-clair">{c.value}</dt>
-              <dd className="mt-1 text-blanc/75">{c.label}</dd>
+              <dd className="mt-1 text-ivoire/75">{c.label}</dd>
             </div>
           ))}
         </dl>

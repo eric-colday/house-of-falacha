@@ -3,14 +3,14 @@ import { site } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="bg-marine text-blanc" style={{ ["--logo-trait" as string]: "#0e1220" }}>
+    <footer className="border-t border-or/30 bg-abysse text-ivoire" >
       <div className="cotes h-3 opacity-80" />
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <LogoComplet className="w-44 text-[11rem]" />
-          <p className="mt-6 max-w-xs text-blanc/70">{site.tagline}</p>
+          <p className="mt-6 max-w-xs text-ivoire/70">{site.tagline}</p>
         </div>
-        <div className="space-y-2 text-blanc/80">
+        <div className="space-y-2 text-ivoire/80">
           <p className="lettrage text-sm text-or-clair">Nous trouver</p>
           <p>{site.city}, {site.country}</p>
           <p>WhatsApp {site.phone}</p>
@@ -18,13 +18,13 @@ export function Footer() {
             TikTok {site.tiktokHandle}
           </a>
         </div>
-        <div className="space-y-2 text-blanc/70">
+        <div className="space-y-2 text-ivoire/70">
           <p className="lettrage text-sm text-or-clair">Commandes</p>
           <p>Paiement sécurisé par Stripe.</p>
           <p>Pas de livraison : retrait sur place le jour de l'événement.</p>
         </div>
       </div>
-      <p className="border-t border-blanc/10 px-4 py-5 text-center text-sm text-blanc/50">
+      <p className="border-t border-ivoire/10 px-4 py-5 text-center text-sm text-ivoire/50">
         © {new Date().getFullYear()} House of Falacha, H.O.F Academy
       </p>
     </footer>

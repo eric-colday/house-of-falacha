@@ -12,13 +12,13 @@ const shapes: Record<string, string> = {
 export function ProductVisual({ visual, color }: { visual: string; color: string }) {
   const light = ["#ffffff", "#efe6d2"].includes(color.toLowerCase());
   return (
-    <div className="relative flex aspect-square max-w-full items-center justify-center overflow-hidden bg-lin">
+    <div className="relative flex aspect-square max-w-full items-center justify-center overflow-hidden bg-[#1c2240]">
       <svg viewBox="0 0 100 100" className="h-3/4 w-3/4 drop-shadow-md" aria-hidden="true">
         <path
           d={shapes[visual] ?? shapes.bag}
           fill={color}
           fillRule="evenodd"
-          stroke={light ? "#b8955a" : "none"}
+          stroke={light ? "#8a6a35" : "#c4a266"}
           strokeWidth="1"
           strokeLinejoin="round"
         />

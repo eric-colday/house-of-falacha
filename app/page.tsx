@@ -126,7 +126,7 @@ export default async function Home() {
       </section>
 
       {/* TIKTOK */}
-      <section id="tiktok" className="scroll-mt-16 bg-marine text-blanc">
+      <section id="tiktok" className="scroll-mt-16 border-y border-or/30 bg-abysse text-ivoire">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
             <h2 className="escalier text-or-clair text-[clamp(2.2rem,5.5vw,4.2rem)]">
@@ -136,7 +136,7 @@ export default async function Home() {
             </h2>
             <div className="flex flex-wrap gap-3">
               <a href="/galerie" className="btn btn-or">Voir la galerie</a>
-              <a href={site.tiktok} target="_blank" rel="noreferrer" className="btn border-or-clair text-blanc hover:bg-blanc hover:text-marine">Suivre {site.tiktokHandle}</a>
+              <a href={site.tiktok} target="_blank" rel="noreferrer" className="btn border-or-clair text-ivoire hover:bg-ivoire hover:text-nuit">Suivre {site.tiktokHandle}</a>
             </div>
           </div>
           <TikTokFeed />

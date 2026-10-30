@@ -4,7 +4,7 @@ import { nav } from "@/lib/content";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-or/40 bg-blanc/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-or/40 bg-blanc/90 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <a href="/" className="flex items-center gap-3" aria-label="House of Falacha, accueil">
           <Lotus className="h-9 w-12" />

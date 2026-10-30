@@ -22,11 +22,11 @@ function CarteTikTok({ post }: { post: TikTokPost }) {
   if (post.type === "photo") {
     return (
       <figure>
-        <a href={post.url} target="_blank" rel="noreferrer" className={`${forme} group bg-marine`} aria-label={`${post.title}, voir les photos sur TikTok`}>
+        <a href={post.url} target="_blank" rel="noreferrer" className={`${forme} group bg-abysse`} aria-label={`${post.title}, voir les photos sur TikTok`}>
           <div className="cotes absolute inset-0 opacity-40" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-5" style={{ ["--logo-trait" as string]: "#0e1220" }}>
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-5" >
             <Lotus className="h-16 w-24" />
-            <span className="rounded-full border border-blanc/70 px-4 py-2 text-sm text-blanc transition group-hover:bg-or group-hover:text-marine">
+            <span className="rounded-full border border-ivoire/70 px-4 py-2 text-sm text-ivoire transition group-hover:bg-or group-hover:text-nuit">
               Voir les photos
             </span>
           </div>
@@ -39,7 +39,7 @@ function CarteTikTok({ post }: { post: TikTokPost }) {
   // Vidéo : lecteur officiel TikTok, chargé seulement quand la carte approche de l'écran.
   return (
     <figure>
-      <div className={`${forme} bg-marine`}>
+      <div className={`${forme} bg-abysse`}>
         <iframe
           src={`https://www.tiktok.com/player/v1/${post.id}?rel=0&description=0&music_info=0&controls=1&progress_bar=1`}
           title={post.title}
@@ -71,18 +71,18 @@ function Visionneuse({ photos, index, onClose, onMove }: { photos: Photo[]; inde
   }, [index, photos.length, onClose, onMove]);
 
   return (
-    <div role="dialog" aria-modal="true" aria-label={photo.alt} className="fixed inset-0 z-[100] flex flex-col bg-marine/95 p-4 text-blanc" onClick={onClose}>
+    <div role="dialog" aria-modal="true" aria-label={photo.alt} className="fixed inset-0 z-[100] flex flex-col bg-abysse/95 p-4 text-ivoire" onClick={onClose}>
       <div className="flex items-center justify-between">
-        <span className="text-sm text-blanc/70 tabular-nums">{index + 1} / {photos.length}</span>
+        <span className="text-sm text-ivoire/70 tabular-nums">{index + 1} / {photos.length}</span>
         <button type="button" onClick={onClose} className="btn btn-or px-4 py-2">Fermer</button>
       </div>
       <div className="flex min-h-0 flex-1 items-center justify-center gap-3 py-4" onClick={(e) => e.stopPropagation()}>
-        <button type="button" onClick={() => onMove((index - 1 + photos.length) % photos.length)} className="hidden h-12 w-12 shrink-0 rounded-full border border-blanc/40 sm:block" aria-label="Photo précédente">‹</button>
+        <button type="button" onClick={() => onMove((index - 1 + photos.length) % photos.length)} className="hidden h-12 w-12 shrink-0 rounded-full border border-ivoire/40 sm:block" aria-label="Photo précédente">‹</button>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={photo.src} alt={photo.alt} className="max-h-full min-w-0 max-w-full rounded-[2rem_0.3rem_2rem_0.3rem] object-contain" />
-        <button type="button" onClick={() => onMove((index + 1) % photos.length)} className="hidden h-12 w-12 shrink-0 rounded-full border border-blanc/40 sm:block" aria-label="Photo suivante">›</button>
+        <button type="button" onClick={() => onMove((index + 1) % photos.length)} className="hidden h-12 w-12 shrink-0 rounded-full border border-ivoire/40 sm:block" aria-label="Photo suivante">›</button>
       </div>
-      <p className="text-center text-blanc/80">{photo.alt}</p>
+      <p className="text-center text-ivoire/80">{photo.alt}</p>
     </div>
   );
 }
@@ -105,7 +105,7 @@ export function Galerie({ themes, posts, photos }: { themes: string[]; posts: Ti
             aria-pressed={theme === t}
             onClick={() => setTheme(t)}
             className={`rounded-full border px-4 py-2 text-sm transition ${
-              theme === t ? "border-marine bg-marine text-blanc" : "border-or/60 hover:border-marine"
+              theme === t ? "border-or bg-or text-nuit" : "border-or/60 hover:border-marine"
             }`}
           >
             {t}
