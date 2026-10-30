@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/*
+  Direction : l'univers du logo brodé House of Falacha.
+  Fond blanc comme le tissu, or brodé pour la marque, bleu marine du contour pour le texte.
+  Une seule famille géométrique (Jost) proche du lettrage du logo, titres posés en escalier comme
+  « HOUSE / OF / FALACHA ». Les côtes des pétales deviennent le motif du site.
+  Élément mémorable : le grand lotus qui s'ouvre pétale par pétale à l'arrivée sur l'accueil.
+*/
+@theme {
+  --color-blanc: #ffffff;
+  --color-lin: #f8f5ef;
+  --color-or: #b8955a;
+  --color-or-clair: #e2cfa6;
+  --color-or-fonce: #8a6a35;
+  --color-marine: #1b2033;
+  --color-ardoise: #5a6072;
+  --font-sans: "Jost", "Futura", "Century Gothic", "Avenir Next", sans-serif;
+}
+
+:root {
+  --logo-or: #b8955a;
+  --logo-trait: #1b2033;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-blanc);
+  color: var(--color-marine);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-or-fonce);
+  outline-offset: 3px;
+}
+
+/* Lettrage du logo : capitales géométriques, légèrement espacées */
+.lettrage {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* Titre en escalier, comme HOUSE / OF / FALACHA sur la broderie */
+.escalier {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.02;
+}
+.escalier > span {
+  display: block;
+}
+.escalier > span:nth-child(2) {
+  padding-left: 2.1em;
+}
+.escalier > span:nth-child(3) {
+  padding-left: 1.05em;
+}
+
+/* Côtes de broderie : fines lignes verticales comme dans les pétales */
+.cotes {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 11px,
+    color-mix(in srgb, var(--color-or) 35%, transparent) 11px 12px
+  );
+}
+
+/* Filet piqué : ligne pointillée façon point de couture */
+.couture {
+  border-top: 2px dashed color-mix(in srgb, var(--color-or) 70%, transparent);
+}
+
+/* Boutons en forme de pétale : deux coins opposés arrondis */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid var(--color-marine);
+  border-radius: 1.4rem 0.2rem 1.4rem 0.2rem;
+  padding: 0.85rem 1.6rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-marine {
+  background: var(--color-marine);
+  color: var(--color-blanc);
+}
+.btn-marine:hover:not(:disabled) {
+  background: var(--color-or-fonce);
+  border-color: var(--color-or-fonce);
+}
+.btn-contour {
+  background: transparent;
+  color: var(--color-marine);
+}
+.btn-contour:hover:not(:disabled) {
+  background: var(--color-marine);
+  color: var(--color-blanc);
+}
+.btn-or {
+  background: var(--color-or);
+  border-color: var(--color-or);
+  color: var(--color-marine);
+}
+.btn-or:hover:not(:disabled) {
+  background: var(--color-or-clair);
+  border-color: var(--color-or-clair);
+}
+
+/* Le lotus s'ouvre : chaque pétale pousse depuis sa base */
+@keyframes ouvre {
+  from {
+    transform: scale(0.15, 0.05);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+.petale {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: ouvre 0.9s cubic-bezier(0.25, 0.9, 0.3, 1.05) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .petale {
+    animation: none;
+  }
+}

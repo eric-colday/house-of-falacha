@@ -1,0 +1,110 @@
+{
+  "_aide": "Photos : dépose les fichiers dans public/galerie/ puis ajoute-les dans « photos » (src, alt, theme). Vidéos TikTok : copie l'identifiant à la fin de l'adresse (…/video/IDENTIFIANT) et la date. type « photo » = carrousel TikTok, ouvert sur TikTok.",
+  "themes": [
+    "Workshops",
+    "Événements",
+    "Solidarité",
+    "Communauté"
+  ],
+  "photos": [],
+  "tiktok": [
+    {
+      "id": "7701763133861367073",
+      "type": "video",
+      "title": "Notre deuxième famille",
+      "theme": "Communauté",
+      "date": "2026-10-28"
+    },
+    {
+      "id": "7700908810659056929",
+      "type": "video",
+      "title": "Une journée dans un orphelinat au Cameroun",
+      "theme": "Solidarité",
+      "date": "2026-10-26"
+    },
+    {
+      "id": "7694201387655154977",
+      "type": "video",
+      "title": "Les locaux du workshop 2027",
+      "theme": "Événements",
+      "date": "2026-10-08"
+    },
+    {
+      "id": "7693499597628427552",
+      "type": "video",
+      "title": "Merci à nos coachs",
+      "theme": "Communauté",
+      "date": "2026-10-06"
+    },
+    {
+      "id": "7692411452128234785",
+      "type": "video",
+      "title": "Les sourires du workshop",
+      "theme": "Workshops",
+      "date": "2026-10-03"
+    },
+    {
+      "id": "7691676091353812257",
+      "type": "video",
+      "title": "Souvenirs de workshop",
+      "theme": "Workshops",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "7689069281572687136",
+      "type": "photo",
+      "title": "La maison rouvre bientôt",
+      "theme": "Communauté",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "7639761317913562401",
+      "type": "video",
+      "title": "La bonne humeur en danse",
+      "theme": "Workshops",
+      "date": "2026-05-14"
+    },
+    {
+      "id": "7639045337583324448",
+      "type": "video",
+      "title": "Les workshops du samedi",
+      "theme": "Workshops",
+      "date": "2026-05-12"
+    },
+    {
+      "id": "7619733696890883350",
+      "type": "photo",
+      "title": "Le workshop 2026 en images",
+      "theme": "Workshops",
+      "date": "2026-03-21"
+    },
+    {
+      "id": "7619753743281655062",
+      "type": "photo",
+      "title": "L'after event en images",
+      "theme": "Événements",
+      "date": "2026-03-21"
+    },
+    {
+      "id": "7618901706549546243",
+      "type": "video",
+      "title": "Instant détente avec le DJ",
+      "theme": "Événements",
+      "date": "2026-03-19"
+    },
+    {
+      "id": "7618517168820636931",
+      "type": "video",
+      "title": "Les interviews du workshop",
+      "theme": "Workshops",
+      "date": "2026-03-18"
+    }
+  ],
+  "photos_exemple": [
+    {
+      "src": "/galerie/workshop-2026-01.jpg",
+      "alt": "Le groupe du workshop 2026 réuni dans la salle",
+      "theme": "Workshops"
+    }
+  ]
+}

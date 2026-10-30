@@ -1,0 +1,113 @@
+{
+  "currency": "eur",
+  "products": [
+    {
+      "id": "tshirt-hof",
+      "name": "T-shirt H.O.F Academy — marine",
+      "category": "T-shirts",
+      "description": "Coton épais bleu marine, lotus doré brodé sur le cœur.",
+      "price": 2500,
+      "color": "#1b2033",
+      "visual": "tshirt",
+      "stock": {
+        "S": 10,
+        "M": 15,
+        "L": 15,
+        "XL": 8
+      }
+    },
+    {
+      "id": "tshirt-falacha-blanc",
+      "name": "T-shirt House of Falacha — blanc",
+      "category": "T-shirts",
+      "description": "Coupe ample, impression « House of Falacha » en or au dos.",
+      "price": 2500,
+      "color": "#ffffff",
+      "visual": "tshirt",
+      "stock": {
+        "S": 8,
+        "M": 12,
+        "L": 12,
+        "XL": 6
+      }
+    },
+    {
+      "id": "casquette-hof",
+      "name": "Casquette H.O.F",
+      "category": "Accessoires",
+      "description": "Casquette marine réglable, lotus doré brodé.",
+      "price": 1800,
+      "color": "#1b2033",
+      "visual": "cap",
+      "stock": {
+        "unique": 20
+      }
+    },
+    {
+      "id": "tote-falacha",
+      "name": "Tote bag Falacha",
+      "category": "Accessoires",
+      "description": "Sac en toile écrue pour tes affaires de danse, lotus imprimé.",
+      "price": 1200,
+      "color": "#efe6d2",
+      "visual": "bag",
+      "stock": {
+        "unique": 25
+      }
+    },
+    {
+      "id": "bracelet-hof",
+      "name": "Bracelet H.O.F",
+      "category": "Accessoires",
+      "description": "Bracelet tissé or et marine.",
+      "price": 500,
+      "color": "#b8955a",
+      "visual": "bracelet",
+      "stock": {
+        "unique": 50
+      }
+    }
+  ],
+  "workshops": [
+    {
+      "id": "samedi-2026-11-07",
+      "title": "Workshop du samedi — Afro dance",
+      "date": "2026-11-07",
+      "time": "15:00 – 17:30",
+      "place": "Reggio Emilia",
+      "level": "Tous niveaux",
+      "price": 1000,
+      "capacity": 40
+    },
+    {
+      "id": "samedi-2026-11-14",
+      "title": "Workshop du samedi — Afro urbain",
+      "date": "2026-11-14",
+      "time": "15:00 – 17:30",
+      "place": "Reggio Emilia",
+      "level": "Tous niveaux",
+      "price": 1000,
+      "capacity": 40
+    },
+    {
+      "id": "samedi-2026-11-21",
+      "title": "Workshop du samedi — Chorégraphie",
+      "date": "2026-11-21",
+      "time": "15:00 – 17:30",
+      "place": "Reggio Emilia",
+      "level": "Tous niveaux",
+      "price": 1000,
+      "capacity": 40
+    },
+    {
+      "id": "samedi-2026-11-28",
+      "title": "Workshop du samedi — Afro dance & fitness",
+      "date": "2026-11-28",
+      "time": "15:00 – 17:30",
+      "place": "Reggio Emilia",
+      "level": "Tous niveaux",
+      "price": 1000,
+      "capacity": 40
+    }
+  ]
+}

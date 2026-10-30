@@ -1,0 +1,52 @@
+[00:01] Oui vas-y Paz, tu sais que pour le site reprends un peu ce que tu as dit là ?
+[00:23] Bon le site on pourra déjà mettre les filles backkeys, je pense que c'est possible d'ajouter TikTok
+[00:30] pour qu'ils se mettent automatiquement dedans, donc voilà donc c'est possible en fait d'avoir ces
+[00:38] catalogues là qui se mettent automatiquement à l'intérieur, là tu voudrais vendre tes t-shirts
+[00:46] Ok les accessoires, et maintenant tu voudrais également, dès lors que tu programmes un workshop, c'est ça un workshop ?
+[01:00] Et le nom du site, ça va être House or Fallashaubianz ?
+[01:10] C'est ça House or Fallashaubianz ?
+[01:14] Ok, donc regarde toujours le graphique sur le logo tout ça, ça reste pareil
+[01:28] Ok, c'est ça que je dis, c'est ça que tu vois, parce que le site sera habillé comme ça
+[01:37] Un autre truc également, ça veut dire que les workshops là, ce sont des réservations que les gens vont prendre
+[01:46] C'est ça qui va réserver le place, le entry
+[01:52] Dessus également, je veux mettre un moyen des paiements qui s'appellera Stripe, mais ça a des commissions
+[02:01] Des faibles commissions, ça veut dire que si quelqu'un achète un site, il y a des commissions qui vont aller là-bas
+[02:09] Tu connais Stripe ?
+[02:11] Non, je ne connais pas ça
+[02:14] Donc pour les trucs en ligne, il y a des fois ces commissions qu'il faut tenir contre ça
+[02:20] Donc ça veut dire que pour les accessoires, il faudrait mettre aussi le stock disponible, comme ça au fur et à mesure que si quelqu'un commande
+[02:31] Et aussi les trucs des livraisons, est-ce que tu veux mettre ça dessus ? Comment est-ce que la personne, si quelqu'un commande
+[02:40] ça doit être la livraison, doit se limiter à quoi ? Est-ce que tu es prêt à livrer dans toute l'Europe ? Si quelqu'un a les mains, il commande
+[02:48] Est-ce que tu es sûr que tu pourras supporter les frais, les livraisons et tout ?
+[02:54] Je dis que si les commandes, vous voyez déjà que les commandes qui se libèrent du jeu de l'événement même, c'est après ça qu'on pourra m'éliminer
+[03:02] Et l'agir et tout comme on veut faire les commandes qui sont au tirant, mais non, mais l'intrimité, c'est les commandes qui vont ouvrir les trucs qui pourront permettre
+[03:09] ou les gens qui vont venir à l'événement d'avoir d'abord ça sur place
+[03:12] Donc ça veut dire que ce sont des commandes que les gens vont récupérer le jeu même, c'est ça ?
+[03:18] Exactement, exactement
+[03:20] Ok, c'est bien
+[03:23] Donc ça veut dire que si quelqu'un a les mains, il a besoin de ça pour l'instant, on va juste dire que ça s'est rendre
+[03:30] Voilà, ça dépend
+[03:32] Donc c'est ça ?
+[03:43] Je vais t'envoyer un modèle et on va profiter au fil à mesure
+[03:47] Ok, bien on fait comme ça
+[03:52] Est-ce que tu vois déjà une application mobile pour un truc, un service particulier ?
+[04:04] Oui, l'application
+[04:05] Peut-être que peut-être des amours que tu veux
+[04:10] Toi et tes amies veulent te rencontrer en fin
+[04:12] Vous voulez me bouquer pour qu'ils viennent vous faire un coup de danse
+[04:15] De fitness, de danse
+[04:17] Oui
+[04:18] Et ça c'est ça ?
+[04:20] Vous l'avez pris le premier, le premier d'abord
+[04:24] Oui, ça va entre dans, ça va être placé dans le formulaire
+[04:28] Le formulaire par exemple, des demandes, des coûts, par exemple personnels
+[04:32] On va dire que c'est un coup personnalisé
+[04:36] Dans une ville
+[04:38] Donc la personne te contente directement
+[04:40] Non, c'est un truc qui peut se mettre dans le formulaire avec Hopspot
+[04:44] Ok
+[04:45] Ok, je vais faire ça et je vais t'envoyer et tu vas voir ce que ça donne
+[04:50] D'accord
+[04:51] Bien on fait comme ça, je te laisse pour l'instant
+[04:54] D'accord, je te tiens là
+[04:56] On fait comme ça
