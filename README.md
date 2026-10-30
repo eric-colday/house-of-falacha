@@ -41,7 +41,7 @@ Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci —
 
 ## Galerie
 - Vidéos TikTok : `data/galerie.json` → `tiktok`. Pour en ajouter une, copie l'identifiant à la fin de l'adresse (`…/video/7700908810659056929`), un titre, un thème et la date. Elles se lisent directement sur le site avec le lecteur officiel TikTok.
-- Photos : dépose les fichiers dans `public/galerie/`, puis ajoute-les dans `photos` (`src`, `alt`, `theme`). Elles s'affichent en mosaïque avec une visionneuse plein écran. Un exemple est dans `photos_exemple`.
+- Photos : dépose les fichiers dans `public/galerie/`, puis ajoute-les dans `photos` (`src`, `alt` en `fr` / `it`, `theme`). Elles s'affichent en mosaïque avec une visionneuse plein écran.
 
 ## Modifier le contenu
 - Produits, prix (en centimes), stock de départ, dates de workshops : `data/catalog.json`.
