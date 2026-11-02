@@ -26,11 +26,12 @@ export const equipe = [
   { name: "Caporal237", role: "coach" as const },
 ];
 
-/** Photos envoyées par David (crédits : Randy_237 photography, Visora). */
+/** Photos envoyées par David. Toutes les photos et vidéos sont de Visora. */
 export const photosMaison = {
   hero: "/galerie/photo-de-groupe.jpg",
   maison: "/galerie/cercle-de-danse.jpg",
   apropos: "/galerie/photo-de-groupe.jpg",
+  solidarite: "/galerie/orphelinat-enfants.jpg",
   strip: [
     "/galerie/coach-falacha.jpg",
     "/galerie/danseuse-tresses.jpg",

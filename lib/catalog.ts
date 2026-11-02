@@ -22,6 +22,8 @@ export type Workshop = {
   place: string;
   level: Localized;
   photo?: string;
+  /** Types d'entrée (battle, spectateur…), prix à venir. */
+  entrees?: { id: string; title: Localized; text: Localized }[];
   reservationsOuvertes: boolean;
   price: number | null;
   capacity: number | null;

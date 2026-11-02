@@ -118,7 +118,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <a href={l(lang, "/boutique")} className="btn btn-contour">{h.merchCta}</a>
         </div>
         {!boutiqueOuverte && <p className="mt-6 max-w-xl text-lg text-ardoise">{h.merchText}</p>}
-        <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-10 md:grid-cols-4">
+        <div className="mt-10 grid gap-x-5 gap-y-10 sm:grid-cols-3">
           {products.slice(0, 4).map((p) => (
             <a key={p.id} href={l(lang, "/boutique")} className="group block">
               <div className="relative overflow-hidden rounded-[2rem_0.25rem_2rem_0.25rem] border border-or/40">
@@ -163,6 +163,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         </div>
         <div className="border-t border-or/40 pt-12 md:border-l md:border-t-0 md:pl-12 md:pt-0">
           <Titre lignes={h.charityTitle} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={photosMaison.solidarite} alt="" loading="lazy" className="mt-8 aspect-[3/2] w-full max-w-full rounded-[2rem_0.25rem_2rem_0.25rem] object-cover" />
           <p className="mt-6 max-w-md text-lg text-ardoise">{h.charityText}</p>
           <a href={site.whatsapp} className="btn btn-contour mt-8">{h.charityCta}</a>
         </div>

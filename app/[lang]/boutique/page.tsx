@@ -66,6 +66,11 @@ export default async function Boutique({ params }: { params: Promise<{ lang: str
                           {boutiqueOuverte && <p className="whitespace-nowrap text-lg text-or-fonce">{formatPrice(p.price, lang)}</p>}
                         </div>
                         <p className="flex-1 text-ardoise">{p.description[lang]}</p>
+                        {!boutiqueOuverte && (
+                          <p className="text-sm text-ardoise">
+                            <span className="text-or-fonce">{s.sizes} :</span> {Object.keys(p.stock).join(" · ")}
+                          </p>
+                        )}
                         {boutiqueOuverte ? (
                           <AddToCart name={p.name[lang]} price={p.price} variants={variants} />
                         ) : (

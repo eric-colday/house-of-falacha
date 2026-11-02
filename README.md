@@ -64,14 +64,22 @@ Accueil, Workshops, Boutique, Cours perso, Galerie, À propos, Panier, Merci —
 - Ouvrir les réservations d'un événement : `"reservationsOuvertes": true`, `price` (centimes) et `capacity`.
 
 ## Reçu de David (30 oct. 2026, WhatsApp)
-- Logo officiel (`public/logo-house-of-falacha.png`, lotus seul : `public/lotus.png`) et 11 photos (`public/galerie/`, crédits Randy_237 photography et Visora).
+- Logo officiel (`public/logo-house-of-falacha.png`, lotus seul : `public/lotus.png`) et 11 photos (`public/galerie/`).
 - Prochain grand événement : Afro Urban Dance Workshop, 7 mars 2027, SD Factory Studio, Reggio Emilia.
 - Coachs : The Ryan, Lady Brown, Caporal237. Visora = studio photo/vidéo partenaire.
 - Sponsors : La_ProceduR, Visora, Destroy Party, TheOldDreams, Bahamshez.
 - Contact : sibafeuedavid@gmail.com, Instagram house_of_falacha. Site en français, italien et anglais.
 
+## Reçu de David (31 oct. 2026, WhatsApp)
+- Boutique : pour l'instant seulement des t-shirts noir, blanc et rose, tailles XS à XXL (casquette et tote bag retirés).
+- Workshop du 7 mars : début à 11 h précises. Deux entrées : participer à la battle, ou venir pour l'événement et l'ambiance. Prix et nombre de places : plus tard.
+- Paiement : OK pour Stripe. Son e-mail PayPal / paiement : sibafeuedavid@gmail.com.
+- Toutes les photos et vidéos sont faites par Visora (crédit mis à jour partout).
+- Parcours : collaboration avec SD Factory depuis mai 2026, pour le bien-être des jeunes par le sport (danse) et des ateliers de peinture.
+- 2 photos de la visite de l'orphelinat (`orphelinat-enfants.jpg`, `orphelinat-equipe.jpg`).
+
 ## À compléter avec David
-- Prix, tailles et stocks du merch (boutique affichée « bientôt disponible » en attendant).
-- Horaire et prix du workshop du 7 mars, nombre de places.
-- Compte de paiement (Stripe ou autre) — il utilise aujourd'hui des plateformes qui facturent la TVA.
-- Logo en plus haute définition (SVG idéalement) ; photos des coachs ; validation du texte À propos.
+- Prix et stock de chaque t-shirt (dans `data/catalog.json`, puis `boutiqueOuverte: true`).
+- Prix de chaque entrée du workshop et nombre de places (pour ouvrir les réservations ; aujourd'hui une seule réservation par événement, les deux types d'entrée demanderont deux billets dans le code).
+- Créer le compte Stripe avec sibafeuedavid@gmail.com et brancher les clés sur Vercel.
+- Photos des coachs ; validation du texte À propos.

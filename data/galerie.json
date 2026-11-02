@@ -8,6 +8,24 @@
   ],
   "photos": [
     {
+      "src": "/galerie/orphelinat-enfants.jpg",
+      "alt": {
+        "fr": "L'équipe House of Falacha avec les enfants de l'orphelinat au Cameroun",
+        "it": "Il team House of Falacha con i bambini dell'orfanotrofio in Camerun",
+        "en": "The House of Falacha team with the children at the orphanage in Cameroon"
+      },
+      "theme": "Solidarité"
+    },
+    {
+      "src": "/galerie/orphelinat-equipe.jpg",
+      "alt": {
+        "fr": "L'équipe en t-shirts House of Falacha lors de la visite de l'orphelinat",
+        "it": "Il team con le magliette House of Falacha durante la visita all'orfanotrofio",
+        "en": "The team in House of Falacha t-shirts during the orphanage visit"
+      },
+      "theme": "Solidarité"
+    },
+    {
       "src": "/galerie/photo-de-groupe.jpg",
       "theme": "Workshops",
       "alt": {

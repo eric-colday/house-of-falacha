@@ -1,14 +1,14 @@
 {
   "currency": "eur",
-  "_aide": "boutiqueOuverte : passer à true quand David a fixé les prix, tailles et stocks. Prix en centimes. Un événement s'ouvre à la réservation avec reservationsOuvertes: true + price + capacity. Chaque texte a ses versions fr, it et en.",
+  "_aide": "boutiqueOuverte : passer à true quand David a fixé les prix et les stocks (seuls articles pour l'instant : t-shirts noir, blanc, rose, tailles XS à XXL). Prix en centimes. Un événement s'ouvre à la réservation avec reservationsOuvertes: true + price + capacity. Chaque texte a ses versions fr, it et en.",
   "boutiqueOuverte": false,
   "products": [
     {
-      "id": "tshirt-hof",
+      "id": "tshirt-hof-noir",
       "name": {
-        "fr": "T-shirt H.O.F Academy",
-        "it": "T-shirt H.O.F Academy",
-        "en": "H.O.F Academy T-shirt"
+        "fr": "T-shirt House of Falacha noir",
+        "it": "T-shirt House of Falacha nera",
+        "en": "Black House of Falacha T-shirt"
       },
       "category": {
         "fr": "T-shirts",
@@ -16,23 +16,25 @@
         "en": "T-shirts"
       },
       "description": {
-        "fr": "Le t-shirt des coachs et de la maison, lotus doré sur le cœur.",
-        "it": "La maglietta dei coach e della casa, loto dorato sul cuore.",
-        "en": "The coaches' and the house t-shirt, golden lotus over the heart."
+        "fr": "Le t-shirt de la maison, lotus doré brodé sur la poitrine.",
+        "it": "La maglietta della casa, loto dorato ricamato sul petto.",
+        "en": "The house t-shirt, golden lotus embroidered on the chest."
       },
       "price": 2500,
-      "color": "#1b2033",
+      "color": "#111111",
       "visual": "tshirt",
       "photo": "/galerie/equipe-tshirt-falacha.jpg",
       "stock": {
-        "S": 10,
-        "M": 15,
-        "L": 15,
-        "XL": 8
+        "XS": 0,
+        "S": 0,
+        "M": 0,
+        "L": 0,
+        "XL": 0,
+        "XXL": 0
       }
     },
     {
-      "id": "tshirt-falacha-blanc",
+      "id": "tshirt-hof-blanc",
       "name": {
         "fr": "T-shirt House of Falacha blanc",
         "it": "T-shirt House of Falacha bianca",
@@ -44,67 +46,51 @@
         "en": "T-shirts"
       },
       "description": {
-        "fr": "Coupe ample, logo House of Falacha sur la poitrine.",
-        "it": "Vestibilità ampia, logo House of Falacha sul petto.",
-        "en": "Relaxed fit, House of Falacha logo on the chest."
+        "fr": "Coupe ample, lotus doré sur la poitrine.",
+        "it": "Vestibilità ampia, loto dorato sul petto.",
+        "en": "Relaxed fit, golden lotus on the chest."
       },
       "price": 2500,
       "color": "#ffffff",
       "visual": "tshirt",
       "photo": "/galerie/coach-en-action.jpg",
       "stock": {
-        "S": 8,
-        "M": 12,
-        "L": 12,
-        "XL": 6
+        "XS": 0,
+        "S": 0,
+        "M": 0,
+        "L": 0,
+        "XL": 0,
+        "XXL": 0
       }
     },
     {
-      "id": "casquette-hof",
+      "id": "tshirt-hof-rose",
       "name": {
-        "fr": "Casquette H.O.F",
-        "it": "Cappellino H.O.F",
-        "en": "H.O.F Cap"
+        "fr": "T-shirt House of Falacha rose",
+        "it": "T-shirt House of Falacha rosa",
+        "en": "Pink House of Falacha T-shirt"
       },
       "category": {
-        "fr": "Accessoires",
-        "it": "Accessori",
-        "en": "Accessories"
+        "fr": "T-shirts",
+        "it": "T-shirt",
+        "en": "T-shirts"
       },
       "description": {
-        "fr": "Casquette réglable, lotus doré brodé.",
-        "it": "Cappellino regolabile, loto dorato ricamato.",
-        "en": "Adjustable cap with an embroidered golden lotus."
+        "fr": "Le rose de la maison, lotus doré sur la poitrine.",
+        "it": "Il rosa della casa, loto dorato sul petto.",
+        "en": "The house pink, golden lotus on the chest."
       },
-      "price": 1800,
-      "color": "#1b2033",
-      "visual": "cap",
+      "price": 2500,
+      "color": "#e0245e",
+      "visual": "tshirt",
+      "photo": "/galerie/orphelinat-equipe.jpg",
       "stock": {
-        "unique": 20
-      }
-    },
-    {
-      "id": "tote-falacha",
-      "name": {
-        "fr": "Tote bag Falacha",
-        "it": "Tote bag Falacha",
-        "en": "Falacha Tote bag"
-      },
-      "category": {
-        "fr": "Accessoires",
-        "it": "Accessori",
-        "en": "Accessories"
-      },
-      "description": {
-        "fr": "Sac en toile pour tes affaires de danse.",
-        "it": "Borsa in tela per le tue cose da ballo.",
-        "en": "Canvas bag for your dance gear."
-      },
-      "price": 1200,
-      "color": "#efe6d2",
-      "visual": "bag",
-      "stock": {
-        "unique": 25
+        "XS": 0,
+        "S": 0,
+        "M": 0,
+        "L": 0,
+        "XL": 0,
+        "XXL": 0
       }
     }
   ],
@@ -122,7 +108,7 @@
         "en": "The house's next big event"
       },
       "date": "2027-03-07",
-      "time": null,
+      "time": "11:00",
       "place": "SD Factory Studio, Reggio Emilia",
       "level": {
         "fr": "Tous niveaux",
@@ -132,7 +118,35 @@
       "photo": "/galerie/battle-afro-urban.jpg",
       "reservationsOuvertes": false,
       "price": null,
-      "capacity": null
+      "capacity": null,
+      "entrees": [
+        {
+          "id": "battle",
+          "title": {
+            "fr": "Entrée battle",
+            "it": "Ingresso battle",
+            "en": "Battle entry"
+          },
+          "text": {
+            "fr": "Tu participes à la battle.",
+            "it": "Partecipi alla battle.",
+            "en": "You compete in the battle."
+          }
+        },
+        {
+          "id": "spectateur",
+          "title": {
+            "fr": "Entrée événement",
+            "it": "Ingresso evento",
+            "en": "Event entry"
+          },
+          "text": {
+            "fr": "Tu viens profiter de l'événement et de l'ambiance.",
+            "it": "Vieni a goderti l'evento e l'atmosfera.",
+            "en": "You come to enjoy the event and the vibe."
+          }
+        }
+      ]
     }
   ]
 }

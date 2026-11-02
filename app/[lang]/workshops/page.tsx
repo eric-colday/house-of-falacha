@@ -56,10 +56,25 @@ export default async function Workshops({ params }: { params: Promise<{ lang: st
                       </div>
                       <dl className="grid grid-cols-2 gap-x-6 gap-y-4">
                         <div><dt className="text-sm text-ardoise">{e.date}</dt><dd className="font-medium">{formatDate(w.date, lang)}</dd></div>
-                        <div><dt className="text-sm text-ardoise">{e.time}</dt><dd className="font-medium">{w.time ?? e.timeSoon}</dd></div>
+                        <div><dt className="text-sm text-ardoise">{e.time}</dt><dd className="font-medium">{w.time ? `${w.time} ${e.sharp}` : e.timeSoon}</dd></div>
                         <div><dt className="text-sm text-ardoise">{e.place}</dt><dd className="font-medium">{w.place}</dd></div>
                         <div><dt className="text-sm text-ardoise">{e.level}</dt><dd className="font-medium">{w.level[lang]}</dd></div>
                       </dl>
+
+                      {w.entrees && w.entrees.length > 0 && (
+                        <div>
+                          <p className="lettrage text-sm text-or-fonce">{e.entriesTitle}</p>
+                          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                            {w.entrees.map((en) => (
+                              <li key={en.id} className="rounded-[1.25rem_0.25rem_1.25rem_0.25rem] border border-or/40 p-4">
+                                <p className="font-medium">{en.title[lang]}</p>
+                                <p className="mt-1 text-sm text-ardoise">{en.text[lang]}</p>
+                                <p className="mt-2 text-sm text-or-fonce">{e.priceSoon}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
                       <div className="couture mt-auto pt-6">
                         {open ? (
