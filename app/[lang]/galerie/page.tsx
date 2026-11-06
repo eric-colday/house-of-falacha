@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
 import { site } from "@/lib/content";
 import { getTikTokPosts, photos, themes } from "@/lib/galerie";
-import { getDict, isLang } from "@/lib/i18n";
+import { getDict, isLang, l } from "@/lib/i18n";
 import { Galerie } from "./Galerie";
 
 export const revalidate = 43200;
@@ -21,7 +21,7 @@ export default async function GaleriePage({ params }: { params: Promise<{ lang: 
 
   return (
     <>
-      <PageHero lignes={t.galerie.heroTitle} intro={t.galerie.heroText} photo="/galerie/cercle-de-danse.jpg" />
+      <Hero crumbs={[{ label: t.common.home, href: l(lang) }, { label: t.nav.galerie }]} eyebrow={t.heros.galerie.eyebrow} lignes={t.heros.galerie.lignes} intro={t.galerie.heroText} photo="/galerie/choregraphie-groupe.jpg" focus="50% 45%" discover={t.heros.discover} />
       <Galerie themes={themes} posts={posts} photos={photos} />
       <p className="mx-auto max-w-7xl px-4 pb-10 text-sm text-ardoise sm:px-6">{t.common.photoCredit}</p>
       <section className="border-t border-or/40 bg-lin">

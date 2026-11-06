@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { startCheckout, useCart } from "@/components/Cart";
 import { useLang } from "@/components/Lang";
+import { Hero } from "@/components/Hero";
 import { formatPrice } from "@/lib/catalog";
 
 export default function Panier() {
@@ -13,8 +14,17 @@ export default function Panier() {
   const [error, setError] = useState("");
 
   return (
+    <>
+    <Hero
+      compact
+      crumbs={[{ label: t.common.home, href: href("/") }, { label: t.nav.boutique, href: href("/boutique") }, { label: p.title }]}
+      eyebrow={t.heros.panier.eyebrow}
+      lignes={t.heros.panier.lignes}
+      photo="/galerie/coach-en-action.jpg"
+      focus="50% 35%"
+    />
     <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 md:py-20">
-      <h1 className="lettrage text-or-fonce text-[clamp(2.4rem,6vw,4rem)]">{p.title}</h1>
+      <h2 className="lettrage text-or-fonce text-[clamp(1.8rem,4vw,2.6rem)]">{p.title}</h2>
 
       {items.length === 0 ? (
         <div className="mt-8 rounded-[2.5rem_0.4rem_2.5rem_0.4rem] border border-or/50 p-10">
@@ -74,5 +84,6 @@ export default function Panier() {
         </>
       )}
     </div>
+    </>
   );
 }

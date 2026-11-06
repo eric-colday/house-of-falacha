@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ClearCart } from "./ClearCart";
+import { Hero } from "@/components/Hero";
 import { formatPrice } from "@/lib/catalog";
 import { getDict, isLang, l } from "@/lib/i18n";
 import { stripe } from "@/lib/stripe";
@@ -36,17 +37,14 @@ export default async function Merci({
 
   return (
     <>
-      <section className="border-b border-or/40 bg-lin">
-        <ClearCart />
-        <div className="mx-auto max-w-7xl px-4 pb-12 pt-14 sm:px-6">
-          <h1 className="escalier text-or-fonce text-[clamp(2.6rem,7vw,5rem)]">
-            <span>{m.title[0]}</span>
-            <span>{name || m.title[1]}</span>
-            <span>{m.title[2]}</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg text-ardoise">{m.text}</p>
-        </div>
-      </section>
+      <ClearCart />
+      <Hero
+        compact
+        eyebrow={getDict(lang).heros.merci.eyebrow}
+        lignes={name ? [`${getDict(lang).heros.merci.lignes[0].replace(/,$/, "")} ${name},`, getDict(lang).heros.merci.lignes[1], getDict(lang).heros.merci.lignes[2]] : getDict(lang).heros.merci.lignes}
+        intro={m.text}
+        photo="/galerie/photo-de-groupe.jpg"
+      />
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         {lines.length > 0 && (
           <ul className="max-w-lg border-t border-or/50">

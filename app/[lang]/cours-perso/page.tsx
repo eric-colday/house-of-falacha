@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/Footer";
-import { getDict, isLang } from "@/lib/i18n";
+import { Hero } from "@/components/Hero";
+import { getDict, isLang, l } from "@/lib/i18n";
 import { CoursPersoForm } from "./CoursPersoForm";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -12,11 +12,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function CoursPerso({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   if (!isLang(lang)) notFound();
-  const c = getDict(lang).cours;
+  const t = getDict(lang);
+  const c = t.cours;
 
   return (
     <>
-      <PageHero lignes={c.heroTitle} intro={c.heroText} photo="/galerie/duo-sourires.jpg" />
+      <Hero crumbs={[{ label: t.common.home, href: l(lang) }, { label: t.nav.cours }]} eyebrow={t.heros.cours.eyebrow} lignes={t.heros.cours.lignes} intro={c.heroText} photo="/galerie/danseuse-tresses.jpg" focus="50% 30%" discover={t.heros.discover} ctas={[{ href: "#suite", label: t.heros.cours.cta }]} />
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 md:grid-cols-[0.75fr_1.25fr] md:py-20">
         <aside>
           <h2 className="lettrage text-xl text-or-fonce">{c.how}</h2>

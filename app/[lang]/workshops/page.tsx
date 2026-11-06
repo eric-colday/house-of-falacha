@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
 import { Lotus } from "@/components/Logo";
 import { ReserveWorkshop } from "@/components/ReserveWorkshop";
 import { formatDate, formatPrice, workshopSku, workshops } from "@/lib/catalog";
 import { site } from "@/lib/content";
-import { getDict, isLang, locale } from "@/lib/i18n";
+import { getDict, isLang, l, locale } from "@/lib/i18n";
 import { getStock } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
@@ -26,7 +26,7 @@ export default async function Workshops({ params }: { params: Promise<{ lang: st
 
   return (
     <>
-      <PageHero lignes={e.heroTitle} intro={e.heroText} photo="/galerie/banniere-workshop.jpg" />
+      <Hero crumbs={[{ label: t.common.home, href: l(lang) }, { label: t.nav.workshops }]} eyebrow={t.heros.workshops.eyebrow} lignes={t.heros.workshops.lignes} intro={e.heroText} photo="/galerie/workshop-salle.jpg" focus="50% 40%" discover={t.heros.discover} ctas={[{ href: site.whatsapp, label: e.notify }]} />
 
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
         {upcoming.length === 0 ? (

@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { LogoComplet, Lotus } from "@/components/Logo";
+import { Hero } from "@/components/Hero";
+import { Lotus } from "@/components/Logo";
 import { ProductVisual } from "@/components/ProductVisual";
 import { TikTokFeed } from "@/components/TikTokFeed";
 import { boutiqueOuverte, formatDate, formatPrice, products, workshops } from "@/lib/catalog";
@@ -26,23 +27,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
   return (
     <>
-      {/* LE LOGO EN GRAND */}
-      <section className="relative overflow-hidden border-b border-or/40">
-        <div className="cotes pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_30%_50%,black,transparent_70%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-14 sm:px-6 md:grid-cols-2 md:py-20">
-          <div className="flex justify-center md:justify-start">
-            <LogoComplet animated className="w-[min(78vw,440px)] text-[min(78vw,440px)]" />
-          </div>
-          <div className="max-w-lg">
-            <h1 className="text-[clamp(1.9rem,3.6vw,2.8rem)] font-light leading-tight">{h.heroTitle}</h1>
-            <p className="mt-6 text-lg text-ardoise">{h.heroText}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href={l(lang, "/workshops")} className="btn btn-marine">{h.ctaEvent}</a>
-              <a href={l(lang, "/boutique")} className="btn btn-contour">{h.ctaShop}</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* HERO */}
+      <Hero
+        eyebrow={t.heros.home.eyebrow}
+        lignes={t.heros.home.lignes}
+        intro={t.heros.home.intro}
+        photo="/galerie/cercle-de-danse.jpg"
+        focus="50% 40%"
+        discover={t.heros.discover}
+        ctas={[
+          { href: l(lang, "/workshops"), label: h.ctaEvent },
+          { href: l(lang, "/cours-perso"), label: t.heros.home.cta2, contour: true },
+        ]}
+      />
 
       {/* BANDE PHOTOS */}
       <section aria-label={h.imagesTitle.join(" ")} className="border-b border-or/40">

@@ -37,26 +37,3 @@ export function Footer({ lang }: { lang: Lang }) {
 }
 
 /** En-tête des pages internes : titre en escalier façon logo, photo facultative. */
-export function PageHero({ lignes, intro, photo }: { lignes: [string, string, string]; intro?: string; photo?: string }) {
-  return (
-    <section className="relative overflow-hidden border-b border-or/40 bg-lin">
-      {photo ? (
-        <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={photo} alt="" className="absolute inset-0 h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-lin via-lin/85 to-lin/30" />
-        </>
-      ) : (
-        <div className="cotes pointer-events-none absolute inset-y-0 right-0 w-1/3 opacity-40 [mask-image:linear-gradient(90deg,transparent,black)]" />
-      )}
-      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
-        <h1 className="escalier text-or-fonce text-[clamp(2.6rem,7vw,5.5rem)]">
-          <span>{lignes[0]}</span>
-          <span>{lignes[1]}</span>
-          <span>{lignes[2]}</span>
-        </h1>
-        {intro && <p className="mt-8 max-w-2xl text-lg text-ardoise md:text-xl">{intro}</p>}
-      </div>
-    </section>
-  );
-}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PageHero } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
 import { Lotus } from "@/components/Logo";
 import { equipe, partners, photosMaison, site } from "@/lib/content";
 import { getDict, isLang, l } from "@/lib/i18n";
@@ -30,7 +30,7 @@ export default async function APropos({ params }: { params: Promise<{ lang: stri
 
   return (
     <>
-      <PageHero lignes={a.heroTitle} intro={a.intro} />
+      <Hero variant="partage" crumbs={[{ label: t.common.home, href: l(lang) }, { label: t.nav.apropos }]} eyebrow={t.heros.apropos.eyebrow} lignes={t.heros.apropos.lignes} intro={a.intro} photo="/galerie/equipe-tshirt-falacha.jpg" focus="50% 30%" discover={t.heros.discover} />
 
       {/* HISTOIRE */}
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-[1.1fr_1fr] md:items-center md:py-24">

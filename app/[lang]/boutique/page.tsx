@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AddToCart } from "@/components/AddToCart";
-import { PageHero } from "@/components/Footer";
+import { Hero } from "@/components/Hero";
 import { ProductVisual } from "@/components/ProductVisual";
 import { boutiqueOuverte, formatPrice, productSku, products } from "@/lib/catalog";
-import { getDict, isLang } from "@/lib/i18n";
+import { getDict, isLang, l } from "@/lib/i18n";
 import { getStock } from "@/lib/stock";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,7 @@ export default async function Boutique({ params }: { params: Promise<{ lang: str
 
   return (
     <>
-      <PageHero lignes={s.heroTitle} intro={s.heroText} photo="/galerie/equipe-tshirt-falacha.jpg" />
+      <Hero crumbs={[{ label: t.common.home, href: l(lang) }, { label: t.nav.boutique }]} eyebrow={t.heros.boutique.eyebrow} lignes={t.heros.boutique.lignes} intro={s.heroText} photo="/galerie/orphelinat-equipe.jpg" focus="50% 55%" discover={t.heros.discover} ctas={[{ href: "#suite", label: t.heros.boutique.cta }]} />
 
       <div className="border-b border-or/40">
         <p className="mx-auto max-w-7xl px-4 py-4 text-ardoise sm:px-6">
