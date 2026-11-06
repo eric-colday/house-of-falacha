@@ -27,14 +27,20 @@ export function Reveal() {
 
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        }
+        // Les blocs qui entrent ensemble arrivent l'un après l'autre, sans se bousculer.
+        const visibles = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left);
+        visibles.forEach((e, i) => {
+          const el = e.target as HTMLElement;
+          const voisin = Number(el.dataset.d ?? 0) * 0.15;
+          const delai = Math.min(0.12 + i * 0.16 + voisin, 1.1);
+          el.style.setProperty("--r-delai", `${delai.toFixed(2)}s`);
+          el.classList.add("in");
+          // Une fois arrivé, on retire le délai pour que le survol reste vif.
+          window.setTimeout(() => el.style.removeProperty("--r-delai"), (delai + 2) * 1000);
+          io.unobserve(el);
+        });
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+      { rootMargin: "0px 0px -18% 0px", threshold: 0.1 },
     );
 
     const marque = (root: ParentNode) => {
