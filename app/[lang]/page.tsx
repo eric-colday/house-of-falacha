@@ -41,13 +41,29 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         ]}
       />
 
+      {/* BANDEAU QUI DÉFILE */}
+      <div aria-hidden className="overflow-hidden border-b border-or/40 bg-abysse py-5">
+        <div className="defile">
+          {[0, 1].map((k) => (
+            <div key={k} className="flex shrink-0 items-center">
+              {[...t.heros.defile, ...t.heros.defile].map((mot, i) => (
+                <span key={i} className="flex items-center gap-8 pr-8 text-[clamp(1.4rem,3vw,2.2rem)] font-light italic text-ivoire/85">
+                  {mot}
+                  <span className="h-2 w-2 rotate-45 bg-or" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* BANDE PHOTOS */}
       <section aria-label={h.imagesTitle.join(" ")} className="border-b border-or/40">
         <div className="grid grid-cols-2 gap-1 bg-abysse sm:grid-cols-3 lg:grid-cols-5">
           {photosMaison.strip.map((src, i) => (
             <a key={src} href={l(lang, "/galerie")} className={`group relative block aspect-[4/5] overflow-hidden ${i > 2 ? "hidden lg:block" : ""} ${i === 2 ? "hidden sm:block" : ""}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" loading={i < 3 ? "eager" : "lazy"} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <img src={src} alt="" loading={i < 3 ? "eager" : "lazy"} className="zoom-lent h-full w-full object-cover" />
             </a>
           ))}
         </div>
@@ -75,7 +91,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {prochain.photo && (
               <div className="overflow-hidden rounded-[3rem_0.5rem_3rem_0.5rem] border border-or/40">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={prochain.photo} alt={prochain.title[lang]} className="aspect-[4/5] w-full max-w-full object-cover" />
+                <span data-r="mask" className="block"><img src={prochain.photo} alt={prochain.title[lang]} className="aspect-[4/5] w-full max-w-full object-cover" /></span>
               </div>
             )}
           </div>
@@ -93,7 +109,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
             <div className="overflow-hidden rounded-[0.5rem_3rem_0.5rem_3rem] border border-or/40">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photosMaison.maison} alt="" loading="lazy" className="aspect-[3/2] w-full max-w-full object-cover" />
+              <span data-r="mask" className="block"><img src={photosMaison.maison} alt="" loading="lazy" className="aspect-[3/2] w-full max-w-full object-cover" /></span>
             </div>
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-3">
@@ -117,7 +133,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         {!boutiqueOuverte && <p className="mt-6 max-w-xl text-lg text-ardoise">{h.merchText}</p>}
         <div className="mt-10 grid gap-x-5 gap-y-10 sm:grid-cols-3">
           {products.slice(0, 4).map((p) => (
-            <a key={p.id} href={l(lang, "/boutique")} className="group block">
+            <a key={p.id} href={l(lang, "/boutique")} data-r="" className="group block sm:nth-2:mt-16">
               <div className="relative overflow-hidden rounded-[2rem_0.25rem_2rem_0.25rem] border border-or/40">
                 <ProductVisual visual={p.visual} color={p.color} photo={p.photo} />
                 {!boutiqueOuverte && (
@@ -161,7 +177,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="border-t border-or/40 pt-12 md:border-l md:border-t-0 md:pl-12 md:pt-0">
           <Titre lignes={h.charityTitle} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={photosMaison.solidarite} alt="" loading="lazy" className="mt-8 aspect-[3/2] w-full max-w-full rounded-[2rem_0.25rem_2rem_0.25rem] object-cover" />
+          <span data-r="mask" className="mt-8 block rounded-[2rem_0.25rem_2rem_0.25rem]"><img src={photosMaison.solidarite} alt="" loading="lazy" className="aspect-[3/2] w-full max-w-full object-cover" /></span>
           <p className="mt-6 max-w-md text-lg text-ardoise">{h.charityText}</p>
           <a href={site.whatsapp} className="btn btn-contour mt-8">{h.charityCta}</a>
         </div>

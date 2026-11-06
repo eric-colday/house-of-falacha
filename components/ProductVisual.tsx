@@ -12,7 +12,7 @@ export function ProductVisual({ visual, color, photo }: { visual: string; color:
   if (photo) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={photo} alt="" loading="lazy" className="aspect-square w-full max-w-full object-cover" />
+      <img src={photo} alt="" loading="lazy" className="zoom-lent aspect-square w-full max-w-full object-cover" />
     );
   }
   const light = ["#ffffff", "#efe6d2"].includes(color.toLowerCase());

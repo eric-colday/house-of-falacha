@@ -254,6 +254,7 @@ const fr = {
   },
   heros: {
     discover: "Découvrir",
+    defile: ["Afro dance", "Workshops", "Battles", "Chorégraphie", "Cours privés", "Solidarité", "Reggio Emilia"],
     home: { eyebrow: "H.O.F Academy · Reggio Emilia", lignes: ["La danse", "afro-urbaine", "à Reggio Emilia"] as [string, string, string], intro: "Workshops d'afro dance, grands événements, merch officiel et cours privés. Danse, art, culture et sport : là où chaque événement devient souvenir.", cta2: "Cours perso" },
     workshops: { eyebrow: "Afro Urban Dance Workshop · 7 mars 2027", lignes: ["Le prochain", "grand rendez-vous", "de la maison"] as [string, string, string] },
     boutique: { eyebrow: "Merch officiel", lignes: ["Les t-shirts", "au lotus doré", "de la maison"] as [string, string, string], cta: "Voir les t-shirts" },
@@ -499,6 +500,7 @@ const it: Dict = {
   },
   heros: {
     discover: "Scopri",
+    defile: ["Afro dance", "Workshop", "Battle", "Coreografia", "Lezioni private", "Solidarietà", "Reggio Emilia"],
     home: { eyebrow: "H.O.F Academy · Reggio Emilia", lignes: ["La danza", "afro-urbana", "a Reggio Emilia"], intro: "Workshop di afro dance, grandi eventi, merch ufficiale e lezioni private. Danza, arte, cultura e sport: dove ogni evento diventa un ricordo.", cta2: "Lezioni private" },
     workshops: { eyebrow: "Afro Urban Dance Workshop · 7 marzo 2027", lignes: ["Il prossimo", "grande appuntamento", "della casa"] },
     boutique: { eyebrow: "Merch ufficiale", lignes: ["Le magliette", "con il loto d'oro", "della casa"], cta: "Vedi le magliette" },
@@ -742,6 +744,7 @@ const en: Dict = {
   },
   heros: {
     discover: "Discover",
+    defile: ["Afro dance", "Workshops", "Battles", "Choreography", "Private classes", "Charity", "Reggio Emilia"],
     home: { eyebrow: "H.O.F Academy · Reggio Emilia", lignes: ["Afro-urban", "dance", "in Reggio Emilia"], intro: "Afro dance workshops, big events, official merch and private classes. Dance, art, culture and sport: where every event becomes a memory.", cta2: "Private classes" },
     workshops: { eyebrow: "Afro Urban Dance Workshop · 7 March 2027", lignes: ["The house's", "next big", "event"] },
     boutique: { eyebrow: "Official merch", lignes: ["The house", "golden lotus", "t-shirts"], cta: "See the t-shirts" },

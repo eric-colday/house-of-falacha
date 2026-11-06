@@ -5,6 +5,7 @@ import { CartProvider } from "@/components/Cart";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { LangProvider } from "@/components/Lang";
+import { Reveal } from "@/components/Reveal";
 import { getDict, isLang, langs } from "@/lib/i18n";
 
 export function generateStaticParams() {
@@ -47,6 +48,7 @@ export default async function RootLayout({ children, params }: { children: React
             <Header lang={lang} />
             <main>{children}</main>
             <Footer lang={lang} />
+            <Reveal />
           </CartProvider>
         </LangProvider>
       </body>

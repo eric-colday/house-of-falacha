@@ -43,7 +43,7 @@ export default async function Workshops({ params }: { params: Promise<{ lang: st
                   <article className="grid overflow-hidden rounded-[2.5rem_0.4rem_2.5rem_0.4rem] border border-or/50 lg:grid-cols-[1fr_1.15fr]">
                     {w.photo && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={w.photo} alt={w.title[lang]} className="aspect-[4/3] h-full w-full max-w-full object-cover lg:aspect-auto" />
+                      <span data-r="mask" className="block h-full"><img src={w.photo} alt={w.title[lang]} className="aspect-[4/3] h-full w-full max-w-full object-cover lg:aspect-auto" /></span>
                     )}
                     <div className="flex min-w-0 flex-col gap-6 p-6 sm:p-8">
                       <div className="flex items-end gap-4">

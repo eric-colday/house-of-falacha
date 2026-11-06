@@ -49,7 +49,7 @@ export default async function APropos({ params }: { params: Promise<{ lang: stri
       {/* PHOTO DE GROUPE */}
       <figure className="border-y border-or/40">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={photosMaison.apropos} alt="" className="max-h-[70vh] w-full max-w-full object-cover" />
+        <span data-r="mask" className="block"><img src={photosMaison.apropos} alt="" className="max-h-[70vh] w-full max-w-full object-cover" /></span>
       </figure>
 
       {/* EN QUELQUES MOTS */}

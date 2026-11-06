@@ -53,7 +53,7 @@ export default async function Boutique({ params }: { params: Promise<{ lang: str
                     return { variant, sku, stock: stock[sku] ?? 0 };
                   });
                   return (
-                    <article key={p.id} className="flex flex-col">
+                    <article key={p.id} className="group flex flex-col sm:nth-2:mt-16">
                       <div className="relative overflow-hidden rounded-[2rem_0.25rem_2rem_0.25rem] border border-or/40">
                         <ProductVisual visual={p.visual} color={p.color} photo={p.photo} />
                         {!boutiqueOuverte && (

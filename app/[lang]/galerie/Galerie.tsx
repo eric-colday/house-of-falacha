@@ -132,10 +132,10 @@ export function Galerie({ themes, posts, photos }: { themes: string[]; posts: Ti
                 key={p.src}
                 type="button"
                 onClick={() => setOuverte(photos.indexOf(p))}
-                className="mb-4 block w-full overflow-hidden rounded-[1.8rem_0.3rem_1.8rem_0.3rem] border border-or/40"
+                className="group mb-4 block w-full overflow-hidden rounded-[1.8rem_0.3rem_1.8rem_0.3rem] border border-or/40"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt[lang]} loading="lazy" className="w-full transition duration-300 hover:scale-[1.03]" />
+                <img src={p.src} alt={p.alt[lang]} loading="lazy" className="zoom-lent w-full" />
               </button>
             ))}
           </div>

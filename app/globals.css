@@ -166,3 +166,87 @@ h3 {
     animation: none;
   }
 }
+
+/* ───────────── Mouvements (inspirés des ouvertures éditoriales) ─────────────
+   Une seule courbe pour tout le site : départ franc, arrivée très douce. */
+:root {
+  --ease: cubic-bezier(0.22, 0.8, 0.2, 1);
+}
+
+@keyframes hof-zoom {
+  from { transform: scale(1.14); }
+  to { transform: scale(1); }
+}
+@keyframes hof-monte {
+  from { transform: translateY(105%); }
+  to { transform: none; }
+}
+@keyframes hof-apparait {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hof-goutte {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+@keyframes hof-defile {
+  to { transform: translateX(-50%); }
+}
+
+/* Hero : la photo recule lentement, les lignes du titre montent l'une après l'autre */
+.hero-zoom { animation: hof-zoom 14s var(--ease) both; }
+.hero-ligne { display: block; overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.hero-ligne > span { display: block; animation: hof-monte 1.4s var(--ease) both; }
+.hero-ligne:nth-child(2) > span { animation-delay: 0.14s; }
+.hero-ligne:nth-child(3) > span { animation-delay: 0.28s; }
+.hero-fade { animation: hof-apparait 1.6s 0.55s var(--ease) both; }
+.hero-fade-2 { animation: hof-apparait 1.6s 0.75s var(--ease) both; }
+.goutte { animation: hof-goutte 2.4s ease-in-out infinite; }
+
+/* Bandeau qui défile */
+.defile { display: flex; width: max-content; animation: hof-defile 42s linear infinite; }
+.defile:hover { animation-play-state: paused; }
+
+/* Apparition au défilement : posée par components/Reveal.tsx */
+[data-r] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease), transform 0.8s var(--ease);
+}
+[data-r].in { opacity: 1; transform: none; }
+[data-r="mask"] { opacity: 1; transform: none; overflow: hidden; }
+[data-r="mask"] img { transform: translateY(100%) scale(1.2); transition: transform 1.1s var(--ease); }
+[data-r="mask"].in img { transform: none; }
+[data-d="1"] { transition-delay: 0.12s; }
+[data-d="2"] { transition-delay: 0.24s; }
+[data-d="3"] { transition-delay: 0.36s; }
+
+/* Liens du menu : le trait se dessine de gauche à droite, repart vers la droite */
+.lien-nav { position: relative; }
+.lien-nav::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -2px 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease);
+}
+.lien-nav:hover::after,
+.lien-nav[aria-current="page"]::after { transform: scaleX(1); transform-origin: left; }
+
+/* Boutons : la flèche avance au survol ; photos : zoom lent */
+.btn { transition: background 0.5s var(--ease), color 0.5s var(--ease), border-color 0.5s var(--ease); }
+.btn .fleche { display: inline-block; transition: transform 0.5s var(--ease); }
+.btn:hover .fleche { transform: translateX(5px); }
+.zoom-lent { transition: transform 1.6s var(--ease); }
+.group:hover .zoom-lent { transform: scale(1.08); }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom, .hero-ligne > span, .hero-fade, .hero-fade-2, .goutte, .defile { animation: none; }
+  [data-r], [data-r="mask"] img { opacity: 1; transform: none; transition: none; }
+  .zoom-lent { transition: none; }
+}
